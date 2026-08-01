@@ -1,0 +1,62 @@
+# ForgeOS License
+
+**Copyright (c) 2026 Signis Wellfire**
+
+All rights reserved.
+
+## License Status
+
+ForgeOS is currently released under a **proprietary source-available license** during the bootstrap and early engineering phases.
+
+This repository is published for the purpose of developing ForgeOS and preserving its engineering knowledge. No license is granted to copy, modify, redistribute, sublicense, sell, or commercially exploit this software or its documentation except with prior written permission from the copyright holder.
+
+## Permitted Uses
+
+Unless otherwise agreed in writing by the copyright holder, you may:
+
+* View the repository.
+* Study the architecture and engineering documentation.
+* Submit issues and proposed improvements.
+* Submit pull requests for consideration.
+
+Submission of a contribution does not guarantee its acceptance.
+
+## Restrictions
+
+Without prior written permission from the copyright holder, you may not:
+
+* Redistribute the source code.
+* Redistribute the documentation.
+* Publish modified versions.
+* Create commercial derivatives.
+* Use ForgeOS branding, trademarks, or project identity.
+* Incorporate ForgeOS into commercial products.
+
+## Contributions
+
+By submitting a contribution, you represent that:
+
+1. You have the legal right to submit the contribution.
+2. The contribution is your original work or you have permission to submit it.
+3. You grant the project owner the perpetual, worldwide, non-exclusive, royalty-free right to use, modify, distribute, and relicense the contribution as part of ForgeOS.
+
+Contributors retain copyright to their original work unless otherwise agreed in writing.
+
+## Future Licensing
+
+The licensing model for ForgeOS may change as the project matures.
+
+Potential future licensing strategies include:
+
+* Open Source
+* Source Available
+* Dual Licensing
+* Commercial Licensing
+
+Any licensing change will be documented through the project's engineering governance process and will not retroactively alter rights previously granted.
+
+## Disclaimer
+
+THE SOFTWARE AND DOCUMENTATION ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.
+
+IN NO EVENT SHALL THE COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY ARISING FROM, OUT OF, OR IN CONNECTION WITH THE SOFTWARE OR ITS USE.
