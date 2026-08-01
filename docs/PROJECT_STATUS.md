@@ -6,65 +6,64 @@
 
 # Current Phase
 
-Repository Bootstrap
+Implementation Preparation Phase
 
 ---
 
 # Current Milestone
 
-**Bootstrap Milestone B5.9**
+**Implementation Milestone 1 — Create Organization Vertical Slice**
 
-Completed.
+Preparation authorized.
 
 ---
 
-# Completed Architecture
-
-The repository now includes:
+# Completed Milestones
 
 * Repository Foundation
 * Philosophy
 * Genome
-* Governance Architecture
-* Operational Architecture
-* Workforce Architecture
-* Organizational Intelligence
-* Knowledge Intelligence
-* Distributed Organization Architecture
-* RFC-0001 through RFC-0045
+* Engineering Standards
+* RFC Foundation
+* Design Package 1
+* Design Package 2
+* Design Package 3
+* Design Package 4
+* Implementation Specification Package ISP-0001 through ISP-0010
 
 ---
 
-# Architectural Coverage
+# Approved Implementation Baseline
 
-ForgeOS now provides architectural definitions for:
+The repository now includes:
 
-* Organizational Identity
-* Organizational Memory
-* Knowledge Federation
-* Multi-Organization Ecosystems
-* Strategic Planning
-* Organizational Evolution
-* Autonomous Organizations
-
-The platform architecture now supports organizations operating independently while collaborating within governed ecosystems.
+* RFC-0001 through RFC-0045
+* TDS-0001 through TDS-0004
+* TDR-0001 and TDR-0002
+* Architecture Package
+* Implementation Specification Package ISP-0001 through ISP-0010
 
 ---
 
 # Next Milestone
 
-**Bootstrap Milestone B5.10**
+**Implementation Milestone 1 — Create Organization Vertical Slice**
 
-Focus areas:
+Objective: implement the first end-to-end ForgeOS capability demonstrating:
 
-* Constitutional Governance
-* Organizational Policy
-* Governance Automation
-* Compliance
-* Executive Oversight
+* Domain aggregate
+* Application command
+* Application service
+* Repository abstraction
+* Infrastructure implementation
+* Persistence
+* Tauri boundary
+* Automated tests
+
+Additional RFC expansion beyond the current approved RFC set is deferred until implementation experience requires new architectural decisions.
 
 ---
 
 # Overall Progress
 
-The architectural foundation now extends beyond a single organization and supports distributed organizational ecosystems governed by shared constitutional principles.
+The approved architecture is ready to guide implementation. Implementation work must follow the established RFC, TDS, TDR, Architecture Package, and ISP authority order without introducing undocumented technology or architectural decisions.

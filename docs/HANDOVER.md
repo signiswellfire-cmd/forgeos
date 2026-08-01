@@ -6,40 +6,42 @@
 
 # Repository Status
 
-Bootstrap Milestones **B1 through B5.9** are complete.
+The documentation and architecture preparation phase is complete. ForgeOS is transitioning into the **Implementation Preparation Phase**.
 
-The repository currently contains:
+Completed milestones:
 
 * Repository Foundation
 * Philosophy
 * Genome
-* RFC-0001 through RFC-0045
+* Engineering Standards
+* RFC Foundation
+* Design Package 1
+* Design Package 2
+* Design Package 3
+* Design Package 4
+* Implementation Specification Package ISP-0001 through ISP-0010
 
-ForgeOS now defines:
-
-* Organizational Architecture
-* Workforce Architecture
-* Knowledge Intelligence
-* Organizational Intelligence
-* Distributed Organization Architecture
-* Autonomous Organization Architecture
-
-The platform has evolved from a single organizational model into a federated ecosystem capable of governed collaboration and autonomous operation.
+The approved implementation baseline includes RFC-0001 through RFC-0045, TDS-0001 through TDS-0004, TDR-0001 and TDR-0002, the Architecture Package, and ISP-0001 through ISP-0010.
 
 ---
 
 # Current Direction
 
-Continue with **Bootstrap Milestone B5.10**.
+Begin **Implementation Milestone 1 — Create Organization Vertical Slice**.
 
-Upcoming RFCs:
+The objective is to implement the first end-to-end ForgeOS capability demonstrating:
 
-* RFC-0046 — Constitutional Governance Engine
-* RFC-0047 — Organizational Policy Engine
-* RFC-0048 — Governance Automation Engine
-* RFC-0049 — Organizational Compliance Engine
-* RFC-0050 — Executive Oversight Framework
+* Domain aggregate
+* Application command
+* Application service
+* Repository abstraction
+* Infrastructure implementation
+* Persistence
+* Tauri boundary
+* Automated tests
 
-This milestone introduces the governance architecture that all future ForgeOS implementations will operate under.
+Additional RFC expansion beyond the current approved RFC set is deferred until implementation experience requires new architectural decisions.
+
+Implementation shall follow the approved baseline. Do not introduce undocumented technology decisions, choose a frontend framework or persistence library, or bypass architectural boundaries.
 
 GitHub remains the authoritative project memory and architectural source of truth.

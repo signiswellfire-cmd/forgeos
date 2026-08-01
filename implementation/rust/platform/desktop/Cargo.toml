@@ -1,0 +1,8 @@
+[package]
+name = "forgeos-desktop-platform"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+forgeos-create-organization-application = { path = "../../applications/create-organization" }
+forgeos-organization-infrastructure = { path = "../../infrastructure/organization" }

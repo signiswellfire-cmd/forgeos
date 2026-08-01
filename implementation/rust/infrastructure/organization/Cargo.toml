@@ -1,0 +1,7 @@
+[package]
+name = "forgeos-organization-infrastructure"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+forgeos-organization-domain = { path = "../../domains/organization-domain" }

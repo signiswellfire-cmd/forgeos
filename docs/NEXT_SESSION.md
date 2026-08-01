@@ -1,13 +1,20 @@
 # Next Session
 
-Continue with **Bootstrap Milestone B5.10**.
+Prepare **Implementation Milestone 1 — Create Organization Vertical Slice**.
 
-Generate:
+Create an implementation plan for the first end-to-end ForgeOS capability demonstrating:
 
-* RFC-0046 — Constitutional Governance Engine
-* RFC-0047 — Organizational Policy Engine
-* RFC-0048 — Governance Automation Engine
-* RFC-0049 — Organizational Compliance Engine
-* RFC-0050 — Executive Oversight Framework
+* Domain aggregate
+* Application command
+* Application service
+* Repository abstraction
+* Infrastructure implementation
+* Persistence
+* Tauri boundary
+* Automated tests
 
-This milestone establishes the constitutional governance architecture that will govern all future ForgeOS Organizations and autonomous operational capabilities.
+The plan must trace each implementation decision to the approved RFC, TDS, TDR, Architecture Package, and ISP documents. Do not write source code until the implementation plan is approved.
+
+Additional RFC expansion beyond the current approved RFC set is deferred until implementation experience requires new architectural decisions.
+
+Do not invent missing technology decisions, choose a frontend framework or persistence library, or bypass architecture.

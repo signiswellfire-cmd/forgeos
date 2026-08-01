@@ -1,0 +1,8 @@
+[workspace]
+resolver = "3"
+members = [
+    "domains/organization-domain",
+    "applications/create-organization",
+    "infrastructure/organization",
+    "platform/desktop",
+]
