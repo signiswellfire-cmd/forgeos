@@ -1,6 +1,6 @@
 # ForgeOS Decision Index
 
-**Document Version:** 1.0.0
+**Document Version:** 1.1.0
 
 **Last Updated:** 2026-08-01
 
@@ -8,95 +8,78 @@
 
 # Purpose
 
-This document is the master index of permanent engineering decisions within the ForgeOS repository.
+This document is the master navigation index for every permanent engineering decision within the ForgeOS repository.
 
-Its purpose is to provide a single navigation point for locating the authoritative document that owns each architectural, technical, organizational, or engineering decision.
-
-This document intentionally does **not** duplicate decision content.
-
-Every decision has exactly one authoritative owner.
-
----
-
-# Ownership Principle
-
-ForgeOS follows the principle of **single ownership of knowledge**.
-
-Each permanent decision must have one authoritative document.
-
-Other documents should reference the authoritative source instead of repeating the same information.
+Every architectural, organizational, engineering, and governance decision has exactly one authoritative owner. This document references those owners and records their approval status.
 
 ---
 
 # Decision Status
 
-Each indexed decision uses one of the following states.
-
-| Status     | Meaning                                                        |
-| ---------- | -------------------------------------------------------------- |
-| Planned    | Decision has been identified but not yet documented.           |
-| Draft      | Engineering document is being written.                         |
-| Approved   | Decision has been approved and is the current source of truth. |
-| Superseded | A newer decision replaces this entry.                          |
-| Deprecated | Decision is retained for historical reference only.            |
+| Status     | Meaning                                                |
+| ---------- | ------------------------------------------------------ |
+| Planned    | Decision identified but not yet documented.            |
+| Draft      | Documentation exists but has not become authoritative. |
+| Approved   | Official source of truth.                              |
+| Superseded | Replaced by a newer decision.                          |
+| Deprecated | Retained only for historical reference.                |
 
 ---
 
-# Philosophy Decisions
+# Philosophy
 
-| Decision                 | Authoritative Document                      | Status  |
-| ------------------------ | ------------------------------------------- | ------- |
-| Product Vision           | `docs/philosophy/VISION.md`                 | Planned |
-| Product Mission          | `docs/philosophy/MISSION.md`                | Planned |
-| Core Philosophy          | `docs/philosophy/PHILOSOPHY.md`             | Planned |
-| Engineering Constitution | `docs/philosophy/CONSTITUTION.md`           | Planned |
-| Core Values              | `docs/philosophy/CORE_VALUES.md`            | Planned |
-| Engineering Principles   | `docs/philosophy/ENGINEERING_PRINCIPLES.md` | Planned |
+| Decision                 | Authoritative Document                      | Status       |
+| ------------------------ | ------------------------------------------- | ------------ |
+| Product Vision           | `docs/philosophy/VISION.md`                 | **Approved** |
+| Product Mission          | `docs/philosophy/MISSION.md`                | **Approved** |
+| Core Philosophy          | `docs/philosophy/PHILOSOPHY.md`             | **Approved** |
+| Engineering Constitution | `docs/philosophy/CONSTITUTION.md`           | **Approved** |
+| Core Values              | `docs/philosophy/CORE_VALUES.md`            | **Approved** |
+| Engineering Principles   | `docs/philosophy/ENGINEERING_PRINCIPLES.md` | **Approved** |
 
 ---
 
 # Genome
 
-| Decision       | Authoritative Document  | Status  |
-| -------------- | ----------------------- | ------- |
-| ForgeOS Genome | `docs/genome/GENOME.md` | Planned |
+| Decision       | Authoritative Document  | Status       |
+| -------------- | ----------------------- | ------------ |
+| ForgeOS Genome | `docs/genome/GENOME.md` | **Approved** |
 
 ---
 
 # Requests for Comments (RFC)
 
-| RFC       | Subject            | Status  |
-| --------- | ------------------ | ------- |
-| RFC-0001  | ForgeOS Genome     | Planned |
-| RFC-0002  | Knowledge Model    | Planned |
-| RFC-0003  | Knowledge Graph    | Planned |
-| RFC-0004  | Organization Model | Planned |
-| RFC-0005  | Forge Pipeline     | Planned |
-| RFC-0006+ | Reserved           | Planned |
+| RFC      | Subject            | Status  |
+| -------- | ------------------ | ------- |
+| RFC-0001 | ForgeOS Genome     | Planned |
+| RFC-0002 | Knowledge Model    | Planned |
+| RFC-0003 | Knowledge Graph    | Planned |
+| RFC-0004 | Organization Model | Planned |
+| RFC-0005 | Forge Pipeline     | Planned |
 
 ---
 
 # Technical Design Specifications (TDS)
 
-| TDS       | Subject             | Status  |
-| --------- | ------------------- | ------- |
-| TDS-0001  | System Architecture | Planned |
-| TDS-0002  | Domain Model        | Planned |
-| TDS-0003  | Organization Model  | Planned |
-| TDS-0004  | Mission Engine      | Planned |
-| TDS-0005+ | Reserved            | Planned |
+| TDS      | Subject             | Status  |
+| -------- | ------------------- | ------- |
+| TDS-0001 | System Architecture | Planned |
+| TDS-0002 | Domain Model        | Planned |
+| TDS-0003 | Organization Model  | Planned |
+| TDS-0004 | Mission Engine      | Planned |
+| TDS-0005 | Process Engine      | Planned |
 
 ---
 
 # Technology Decision Records (TDR)
 
-| TDR       | Subject              | Status  |
-| --------- | -------------------- | ------- |
-| TDR-0001  | Programming Language | Planned |
-| TDR-0002  | Desktop Framework    | Planned |
-| TDR-0003  | Storage Strategy     | Planned |
-| TDR-0004  | Event Bus            | Planned |
-| TDR-0005+ | Reserved             | Planned |
+| TDR      | Subject              | Status  |
+| -------- | -------------------- | ------- |
+| TDR-0001 | Programming Language | Planned |
+| TDR-0002 | Desktop Framework    | Planned |
+| TDR-0003 | Storage Strategy     | Planned |
+| TDR-0004 | Event Bus            | Planned |
+| TDR-0005 | AI Gateway           | Planned |
 
 ---
 
@@ -115,18 +98,6 @@ Each indexed decision uses one of the following states.
 
 # Repository Governance
 
-This document should be updated whenever:
+Every permanent engineering decision shall appear in this index once its authoritative document has been approved.
 
-* A new RFC is created.
-* A TDS is approved.
-* A TDR is approved.
-* A philosophy document becomes authoritative.
-* A decision is superseded or deprecated.
-
-The Decision Index should always allow a contributor to locate the current source of truth for any significant engineering decision within the repository.
-
----
-
-# Bootstrap Completion
-
-Bootstrap Milestone B1 is complete when every document listed in the Repository Foundation milestone exists in the repository and this Decision Index is established as the navigation entry point for all future engineering decisions.
+No decision should exist without a documented owner.
