@@ -14,6 +14,17 @@ Every permanent architectural decision shall have exactly one authoritative owne
 
 ---
 
+# Phase Status
+
+| Phase                         | Status     |
+| ----------------------------- | ---------- |
+| Bootstrap Phase               | ✅ Complete |
+| Implementation Preparation    | 🟢 Active   |
+| Implementation Milestone 1.5  | ⏳ Pending Execution |
+| Create Organization Slice     | ⏳ Pending (after 1.5) |
+
+---
+
 # Bootstrap Progress
 
 | Milestone                  | Status     |
@@ -30,6 +41,25 @@ Every permanent architectural decision shall have exactly one authoritative owne
 | B5.7                       | ✅ Complete |
 | B5.8                       | ✅ Complete |
 | B5.9                       | ✅ Complete |
+
+---
+
+# Implementation Preparation Progress
+
+| Milestone                                    | Status          |
+| -------------------------------------------- | --------------- |
+| Design Package 1 (TDS + ARCH-0001–0004)      | ✅ Complete     |
+| Design Package 2                             | ✅ Complete     |
+| Design Package 3                             | ✅ Complete     |
+| Design Package 4                             | ✅ Complete     |
+| Implementation Specification Package ISP-0001–0010 | ✅ Complete |
+| MILESTONE-001 — Create Organization vertical slice plan | ✅ Complete |
+| MILESTONE-001-DOMAIN-DECISIONS               | ✅ Approved     |
+| MILESTONE-001.1 — Workspace Initialization   | ✅ Complete     |
+| MILESTONE-001.2 — Crate Boundary Plan        | ✅ Approved     |
+| MILESTONE-001.3 — Crate Initialization Plan  | ✅ Approved     |
+| MILESTONE-001.4 — Cargo Member Initialization | ✅ Complete     |
+| MILESTONE-001.5 — Organization Domain Foundation | ⏳ Approved Scope — Execution Pending |
 
 ---
 
@@ -79,15 +109,31 @@ RFC-0041 – RFC-0045
 
 ---
 
-# Next RFC Series
+# Approved Technology Decisions
 
-Bootstrap Milestone **B5.10**
+| Decision | Title | Status |
+|----------|-------|--------|
+| TDR-0001 | Programming Language (Rust/Cargo) | ✅ Approved |
+| TDR-0002 | Desktop Framework (Tauri 2.x) | ✅ Approved |
+| TDR-0003 | Storage Strategy (SQLite/SQLx) | ✅ Approved |
+| TDR-0004 | IPC Serialization Strategy (Serde/JSON) | ✅ Approved |
+| TDR-0005 | Workspace Location Reconciliation | ✅ Approved |
+| TDR-0006 | OrganizationId Generation (UUID v4) | ✅ Approved |
 
-* RFC-0046 — Constitutional Governance Engine
-* RFC-0047 — Organizational Policy Engine
-* RFC-0048 — Governance Automation Engine
-* RFC-0049 — Organizational Compliance Engine
-* RFC-0050 — Executive Oversight Framework
+---
+
+# Approved Domain Decisions
+
+| Decision | Status |
+|----------|--------|
+| MILESTONE-001-DOMAIN-DECISIONS — Create Organization domain contract | ✅ Approved |
+| OrganizationType Decision — String-backed value object | ✅ Approved |
+
+---
+
+# RFC Expansion Policy
+
+Additional RFC expansion beyond RFC-0045 is **deferred** until implementation experience requires new architectural decisions. The previously planned bootstrap series (RFC-0046 — Constitutional Governance Engine, RFC-0047 — Organizational Policy Engine, RFC-0048 — Governance Automation Engine, RFC-0049 — Organizational Compliance Engine, RFC-0050 — Executive Oversight Framework) is not active.
 
 ---
 

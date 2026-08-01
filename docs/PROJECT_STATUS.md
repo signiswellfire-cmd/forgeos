@@ -12,9 +12,9 @@ Implementation Preparation Phase
 
 # Current Milestone
 
-**Implementation Milestone 1 — Create Organization Vertical Slice**
+**Implementation Milestone 001.5 — Organization Domain Foundation**
 
-Preparation authorized.
+Scope approved. Execution pending.
 
 ---
 
@@ -30,6 +30,28 @@ Preparation authorized.
 * Design Package 3
 * Design Package 4
 * Implementation Specification Package ISP-0001 through ISP-0010
+* Implementation Milestone 001.1 — Rust Workspace Initialization
+* Implementation Milestone 001.2 — Crate Boundary Plan (approved)
+* Implementation Milestone 001.3 — Crate Initialization Plan (approved)
+* Implementation Milestone 001.4 — Cargo Member Initialization
+
+---
+
+# Approved Implementation Decisions
+
+The implementation baseline includes these approved decisions:
+
+* TDR-0001 — Programming Language (Rust/Cargo)
+* TDR-0002 — Desktop Framework (Tauri 2.x)
+* TDR-0003 — Storage Strategy (SQLite/SQLx)
+* TDR-0004 — IPC Serialization Strategy (Serde/JSON)
+* TDR-0005 — Workspace Location Reconciliation
+* TDR-0006 — OrganizationId Generation (UUID v4)
+* OrganizationType Decision — String-backed value object
+* MILESTONE-001-DOMAIN-DECISIONS — Create Organization domain contract
+* MILESTONE-001.2 — Crate Boundary Plan
+* MILESTONE-001.3 — Crate Initialization Plan
+* MILESTONE-001.5 — Organization Domain Foundation scope
 
 ---
 
@@ -39,7 +61,7 @@ The repository now includes:
 
 * RFC-0001 through RFC-0045
 * TDS-0001 through TDS-0004
-* TDR-0001 and TDR-0002
+* TDR-0001 through TDR-0006
 * Architecture Package
 * Implementation Specification Package ISP-0001 through ISP-0010
 
@@ -47,18 +69,9 @@ The repository now includes:
 
 # Next Milestone
 
-**Implementation Milestone 1 — Create Organization Vertical Slice**
+**Implementation Milestone 001.5 — Organization Domain Foundation**
 
-Objective: implement the first end-to-end ForgeOS capability demonstrating:
-
-* Domain aggregate
-* Application command
-* Application service
-* Repository abstraction
-* Infrastructure implementation
-* Persistence
-* Tauri boundary
-* Automated tests
+Objective: implement the Organization Domain Foundation inside the `forgeos-organization-domain` crate — the Organization aggregate, approved value objects, the Domain-owned `OrganizationRepository` contract, the `OrganizationCreated` domain event, the approved domain error model, and deterministic domain tests — as defined by `docs/implementation/MILESTONE-001.5-ORGANIZATION-DOMAIN.md`.
 
 Additional RFC expansion beyond the current approved RFC set is deferred until implementation experience requires new architectural decisions.
 

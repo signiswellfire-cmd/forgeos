@@ -1,0 +1,6 @@
+# Rust
+target/
+**/target/
+
+# Rust lock file policy
+# Keep Cargo.lock for applications/workspaces
