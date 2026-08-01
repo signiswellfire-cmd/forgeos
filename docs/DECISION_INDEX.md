@@ -1,6 +1,6 @@
 # ForgeOS Decision Index
 
-**Version:** 1.3.0
+**Version:** 1.4.0
 
 **Last Updated:** 2026-08-01
 
@@ -10,7 +10,7 @@
 
 This document is the authoritative navigation index for every permanent architectural decision within ForgeOS.
 
-Every permanent architectural decision shall exist in exactly one authoritative document.
+Every architectural decision shall have exactly one authoritative owner.
 
 ---
 
@@ -28,6 +28,7 @@ Every permanent architectural decision shall exist in exactly one authoritative 
 | B5.5                       | ✅ Complete |
 | B5.6                       | ✅ Complete |
 | B5.7                       | ✅ Complete |
+| B5.8                       | ✅ Complete |
 
 ---
 
@@ -35,49 +36,53 @@ Every permanent architectural decision shall exist in exactly one authoritative 
 
 ## Foundation
 
-RFC-0001 — RFC-0005
+RFC-0001 – RFC-0005
 
 ## Governance
 
-RFC-0006 — RFC-0010
+RFC-0006 – RFC-0010
 
 ## Organizational Capability
 
-RFC-0011 — RFC-0015
+RFC-0011 – RFC-0015
 
 ## Organizational Operations
 
-RFC-0016 — RFC-0020
+RFC-0016 – RFC-0020
 
 ## Operational Architecture
 
-RFC-0021 — RFC-0025
+RFC-0021 – RFC-0025
 
 ## Workforce Architecture
 
-RFC-0026 — RFC-0030
+RFC-0026 – RFC-0030
 
 ## Organizational Intelligence
 
-RFC-0031 — RFC-0035
+RFC-0031 – RFC-0035
+
+## Knowledge Intelligence
+
+RFC-0036 – RFC-0040
 
 ---
 
 # Approved RFC Count
 
-**35 Approved RFCs**
+**40 Approved RFCs**
 
 ---
 
 # Next RFC Series
 
-Bootstrap Milestone **B5.8**
+Bootstrap Milestone **B5.9**
 
-* RFC-0036 — Knowledge Query Engine
-* RFC-0037 — Knowledge Recommendation Engine
-* RFC-0038 — Organizational Search Engine
-* RFC-0039 — Knowledge Lifecycle Engine
-* RFC-0040 — Organizational Learning Engine
+* RFC-0041 — Organization Memory Engine
+* RFC-0042 — Knowledge Federation
+* RFC-0043 — Multi-Organization Architecture
+* RFC-0044 — Organization Evolution Engine
+* RFC-0045 — Autonomous Organization Framework
 
 ---
 
