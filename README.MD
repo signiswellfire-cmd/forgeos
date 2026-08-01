@@ -1,498 +1,247 @@
-\# ForgeOS
+# ForgeOS
 
+> **AI is temporary. Knowledge is permanent.**
 
+ForgeOS is a **Digital Organization Operating System** that enables founders to build, operate, and evolve software through a permanent engineering organization powered by structured knowledge instead of temporary conversations.
 
-> \*\*AI is temporary. Knowledge is permanent.\*\*
+Rather than centering software development around prompts or AI agents, ForgeOS treats engineering as an organizational discipline built on architecture, standards, processes, decisions, and institutional memory.
 
+---
 
+# Vision
 
-ForgeOS is a \*\*Digital Organization Operating System\*\* that enables founders to build, operate, and evolve software products through a permanent engineering organization powered by structured knowledge instead of transient conversations.
+ForgeOS exists to make elite software engineering organizations accessible to every founder.
 
+Its purpose is not to replace engineers, but to make founders capable of leading engineering organizations that would otherwise require years to assemble.
 
+Every engineering decision should strengthen the organization's permanent knowledge rather than depend on a particular individual or AI model.
 
-Unlike AI coding assistants that optimize for generating code, ForgeOS optimizes for creating and preserving engineering knowledge, organizational processes, architectural decisions, and institutional memory.
+---
 
+# Product Definition
 
+## ForgeOS Is
 
-\---
+* A Digital Organization Operating System
+* An Engineering Intelligence Platform
+* A Knowledge-Driven Engineering System
+* A Founder Experience Platform
+* A Local-First, Cloud-Optional Platform
 
+## ForgeOS Is Not
 
+* An AI chatbot
+* An AI coding assistant
+* A prompt engineering platform
+* An IDE
+* An agent orchestration framework
 
-\# Vision
+Artificial intelligence is treated as a professional capability available to the organization—not as the product itself.
 
+---
 
+# Core Philosophy
 
-ForgeOS exists to make world-class software engineering organizations accessible to every founder.
+ForgeOS is founded on a single principle:
 
+> **AI is temporary. Knowledge is permanent.**
 
-
-The objective is not to replace engineers, but to give founders the ability to establish, manage, and continuously improve a professional engineering organization whose knowledge compounds over time.
-
-
-
-\---
-
-
-
-\# What ForgeOS Is
-
-
-
-ForgeOS is:
-
-
-
-\* A Digital Organization Operating System
-
-\* An Engineering Intelligence Platform
-
-\* A Knowledge-Driven Engineering System
-
-\* A Founder Experience Platform
-
-\* A Local-First, Cloud-Optional Platform
-
-
-
-ForgeOS manages engineering as an organization rather than as a sequence of prompts.
-
-
-
-\---
-
-
-
-\# What ForgeOS Is Not
-
-
-
-ForgeOS is \*\*not\*\*:
-
-
-
-\* An AI chatbot
-
-\* A prompt engineering platform
-
-\* A code generation tool
-
-\* An IDE
-
-\* An agent framework
-
-
-
-Artificial intelligence is treated as a capability available to digital professionals—not as the product itself.
-
-
-
-\---
-
-
-
-\# Core Philosophy
-
-
-
-ForgeOS is founded on a simple principle:
-
-
-
-> \*\*AI is temporary. Knowledge is permanent.\*\*
-
-
-
-Every engineering activity should produce durable organizational knowledge.
-
-
+Every activity performed inside ForgeOS should contribute to permanent organizational knowledge.
 
 Conversations are temporary.
 
+Repositories are permanent.
 
+Engineering knowledge must outlive both people and AI models.
 
-Knowledge is permanent.
+---
 
+# Engineering Principles
 
+ForgeOS is built upon the following principles:
 
-The repository—not the conversation—is the authoritative source of truth.
+* Knowledge before AI.
+* Processes before automation.
+* Architect for tomorrow. Implement for today.
+* Behavior before infrastructure.
+* Founder Experience above feature count.
+* One component, one responsibility.
+* Every mission creates permanent knowledge.
+* Local-first. Cloud-optional.
+* Every significant decision must be explainable.
+* Git is permanent engineering memory.
+* Chat is temporary working memory.
 
+---
 
+# Product Roadmap
 
-\---
+## Phase 0 — Founding
 
+Establish philosophy, architecture, engineering principles, and organizational model.
 
+**Status:** Complete
 
-\# Design Principles
+## Phase 1 — Founder Experience (MVP)
 
+Deliver the first operational Digital Organization capable of:
 
+* Organization Management
+* Mission Management
+* Mission Control
+* Executive Meetings
+* SQLite persistence
+* Local-first execution
 
-ForgeOS follows these engineering principles:
+## Phase 2 — Knowledge Engine
 
+Introduce:
 
+* Knowledge Objects
+* Decision Library
+* Blueprint Library
+* Context Builder
 
-\* Knowledge before AI.
+## Phase 3 — Engineering Platform
 
-\* Processes before automation.
+Introduce:
 
-\* Architect for tomorrow. Implement for today.
+* AI Gateway
+* Local LLM integration
+* Executive Reasoning
+* Validation Engine
+* Knowledge Promotion
 
-\* Behavior before infrastructure.
+## Phase 4 — Marketplace
 
-\* Founder Experience above feature count.
+Provide reusable:
 
-\* One component, one responsibility.
+* Blueprints
+* Capabilities
+* Digital Professionals
+* Organizational Assets
 
-\* Every mission creates permanent knowledge.
+## Phase 5 — Self-Evolving Organizations
 
-\* Local-first. Cloud-optional.
+Organizations continuously improve through accumulated knowledge, engineering experience, and organizational learning.
 
-\* Explain important decisions.
+---
 
-\* Git is permanent memory.
-
-\* Chat is temporary working memory.
-
-
-
-\---
-
-
-
-\# Product Roadmap
-
-
-
-\## Phase 0 — Founding
-
-
-
-Establish philosophy, architecture, organizational model, and engineering principles.
-
-
-
-\*\*Status:\*\* Complete
-
-
-
-\## Phase 1 — Founder Experience
-
-
-
-Deliver the minimum viable Digital Organization Operating System.
-
-
-
-Primary capabilities include:
-
-
-
-\* Organization Management
-
-\* Mission Management
-
-\* Mission Control
-
-\* Executive Meetings
-
-\* SQLite persistence
-
-\* Local-first architecture
-
-
-
-\## Phase 2 — Knowledge Engine
-
-
-
-Introduce structured organizational knowledge including:
-
-
-
-\* Knowledge Objects
-
-\* Decision Library
-
-\* Blueprint Library
-
-\* Context Builder
-
-
-
-\## Phase 3 — Engineering Platform
-
-
-
-Expand into engineering execution through:
-
-
-
-\* AI Gateway
-
-\* Local LLM integration
-
-\* Executive Reasoning
-
-\* Validation Engine
-
-\* Knowledge Promotion
-
-
-
-\## Phase 4 — Marketplace
-
-
-
-Enable reusable organizational assets through:
-
-
-
-\* Blueprint Marketplace
-
-\* Capability Marketplace
-
-\* Professional Marketplace
-
-
-
-\## Phase 5 — Self-Evolving Organizations
-
-
-
-Support organizations capable of continuously improving through accumulated knowledge, organizational learning, and engineering evolution.
-
-
-
-\---
-
-
-
-\# Repository Structure
-
-
+# Repository Structure
 
 ```text
-
 forgeos/
-
-
-
 ├── README.md
-
 ├── ROADMAP.md
-
 ├── CONTRIBUTING.md
-
-├── CODE\_OF\_CONDUCT.md
-
+├── CODE_OF_CONDUCT.md
 ├── LICENSE
-
-│
-
 ├── docs/
-
 │   ├── philosophy/
-
 │   ├── genome/
-
 │   ├── rfcs/
-
 │   ├── tds/
-
 │   ├── tdr/
-
 │   ├── standards/
-
 │   ├── architecture/
-
 │   ├── glossary/
-
 │   ├── HANDOVER.md
-
-│   ├── PROJECT\_STATUS.md
-
-│   ├── NEXT\_SESSION.md
-
-│   ├── FOUNDER\_GUIDE.md
-
-│   └── DECISION\_INDEX.md
-
-│
-
+│   ├── PROJECT_STATUS.md
+│   ├── NEXT_SESSION.md
+│   ├── FOUNDER_GUIDE.md
+│   └── DECISION_INDEX.md
 ├── forgeos-core/
-
 ├── forgeos-desktop/
-
 ├── forgeos-sdk/
-
 ├── examples/
-
 ├── scripts/
-
 └── tools/
-
 ```
 
+---
 
+# Engineering Documentation
 
-\---
-
-
-
-\# Engineering Documentation
-
-
-
-The repository is organized around permanent engineering knowledge.
-
-
+The repository is the permanent engineering memory of ForgeOS.
 
 Major document categories include:
 
+* Philosophy
+* Genome
+* Requests for Comments (RFC)
+* Technical Design Specifications (TDS)
+* Technology Decision Records (TDR)
+* Engineering Standards
+* Architecture Documentation
 
+Every document is intended to be versioned, self-contained, and understandable without requiring historical conversations.
 
-\* Philosophy
+---
 
-\* Genome
+# Development Workflow
 
-\* Requests for Comments (RFC)
+Every significant engineering decision follows the same lifecycle:
 
-\* Technical Design Specifications (TDS)
+1. Identify the problem.
+2. Produce an engineering proposal.
+3. Record the decision in an RFC, TDS, or TDR.
+4. Obtain Founder approval when required.
+5. Commit documentation to the repository.
+6. Implement according to the approved documentation.
+7. Preserve resulting knowledge.
 
-\* Technology Decision Records (TDR)
+Implementation follows documented architecture.
 
-\* Engineering Standards
+---
 
-\* Architecture Documentation
+# Source of Truth
 
+ForgeOS maintains one authoritative source for each category of knowledge.
 
+| Category             | Source of Truth      |
+| -------------------- | -------------------- |
+| Product Vision       | Philosophy Documents |
+| Architecture         | RFCs                 |
+| Technical Design     | TDSs                 |
+| Technology Choices   | TDRs                 |
+| Implementation       | Source Code          |
+| Repository State     | PROJECT_STATUS.md    |
+| Session Continuation | NEXT_SESSION.md      |
 
-Each document is intended to be self-contained, versioned, and independently understandable.
+Conversations are temporary collaboration tools and are never considered permanent engineering records.
 
+---
 
+# Contributing
 
-\---
+Contributors should:
 
+1. Review existing architectural documentation.
+2. Avoid duplicating engineering knowledge.
+3. Record architectural changes before implementation.
+4. Follow established engineering standards.
+5. Keep documentation synchronized with implementation.
 
+---
 
-\# Engineering Workflow
+# Current Status
 
+ForgeOS is currently in **Bootstrap Milestone B1 — Repository Foundation**.
 
+The current objective is to establish a complete, production-quality engineering repository before implementation of `forgeos-core` begins.
 
-Every significant architectural decision follows the same lifecycle:
+---
 
+# License
 
+Licensing will be defined in the repository's `LICENSE` file.
 
-1\. Problem Identification
+Until then, all rights remain reserved by the project owner.
 
-2\. Architecture Discussion
+---
 
-3\. Engineering Document (RFC, TDS, or TDR)
+# Long-Term Objective
 
-4\. Founder Approval
+ForgeOS is designed to become the operating system for digital engineering organizations.
 
-5\. Repository Commit
-
-6\. Implementation
-
-7\. Knowledge Preservation
-
-
-
-No important engineering decision should exist only within conversation history.
-
-
-
-\---
-
-
-
-\# Source of Truth
-
-
-
-ForgeOS maintains a single authoritative source for every category of knowledge.
-
-
-
-\* Git repository — permanent engineering memory
-
-\* Engineering documents — architectural authority
-
-\* Source code — implementation authority
-
-\* Conversations — temporary collaboration
-
-
-
-Knowledge should never be duplicated across documents. Documents reference one another rather than repeating content.
-
-
-
-\---
-
-
-
-\# Contributing
-
-
-
-All contributions are expected to align with the project's engineering principles.
-
-
-
-Before implementing significant functionality:
-
-
-
-1\. Determine whether an architectural decision already exists.
-
-2\. Create or update the relevant RFC, TDS, or TDR if necessary.
-
-3\. Obtain approval for architectural changes.
-
-4\. Implement according to approved documentation.
-
-5\. Update repository documentation where required.
-
-
-
-Implementation follows architecture—not the reverse.
-
-
-
-\---
-
-
-
-\# Current Status
-
-
-
-ForgeOS is currently in the \*\*Repository Bootstrap\*\* phase.
-
-
-
-The immediate objective is to establish production-quality engineering documentation before implementation of the platform begins.
-
-
-
-\---
-
-
-
-\# Long-Term Objective
-
-
-
-ForgeOS aims to become the operating system for digital engineering organizations.
-
-
-
-Its purpose is not merely to help software get written.
-
-
-
-Its purpose is to make every founder capable of leading an engineering organization whose knowledge, processes, and capabilities continue to improve long after any individual conversation—or any individual AI model—has ended.
-
-
-
+Its success is measured not by how much code an AI can generate, but by how effectively it enables organizations to create, preserve, and continuously improve engineering knowledge over decades.
