@@ -4,35 +4,39 @@
 
 ---
 
-## Repository Status
+# Repository Status
 
-Bootstrap Milestones B1 through B5.4 are complete.
+Bootstrap Milestones B1 through B5.5 are complete.
 
-Repository documentation includes:
+The repository now contains:
 
-* Repository foundation
+* Foundation documents
 * Philosophy
 * Genome
-* RFC-0001 through RFC-0020
+* RFC-0001 through RFC-0025
 
-The repository now contains the foundational architecture of ForgeOS.
+The architectural core of ForgeOS has been established.
 
 ---
 
-## Current Direction
+# Current Focus
 
-Continue Bootstrap Milestone B5.
+Continue with Bootstrap Milestone B5.6.
 
-Next RFC batch:
+Upcoming RFCs:
 
-* RFC-0021 — Mission Engine
-* RFC-0022 — Process Engine
-* RFC-0023 — Context Builder
-* RFC-0024 — Engineering Memory
-* RFC-0025 — Organization Health
+* RFC-0026 — Professional Framework
+* RFC-0027 — Skill Framework
+* RFC-0028 — Competency Matrix
+* RFC-0029 — Team Formation Engine
+* RFC-0030 — Executive Dashboard
 
-No architectural redesign is pending.
+---
 
-Future work continues expanding approved architecture into implementation-ready engineering specifications.
+# Architectural Direction
 
-GitHub is the authoritative project memory.
+Current work extends the organizational operating model into a complete digital workforce architecture.
+
+Implementation work has not yet begun.
+
+GitHub remains the authoritative source of truth.

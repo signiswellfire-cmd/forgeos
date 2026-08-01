@@ -1,6 +1,6 @@
 # ForgeOS Decision Index
 
-**Version:** 1.0.0
+**Version:** 1.1.0
 
 **Last Updated:** 2026-08-01
 
@@ -8,85 +8,64 @@
 
 # Purpose
 
-This document serves as the master index for all permanent engineering decisions within ForgeOS.
+This document is the authoritative navigation index for all permanent architectural and engineering decisions within ForgeOS.
 
-It provides a single navigation point for RFCs, TDSs, TDRs, engineering standards, and future governance documents.
+Every permanent decision must be represented by exactly one authoritative document.
 
-This document intentionally contains summaries only.
-
-Each referenced document remains the authoritative source.
+This index intentionally contains summaries only.
 
 ---
 
-# Bootstrap Progress
+# Bootstrap Status
 
-## Repository Foundation (B1)
-
-Completed.
-
----
-
-## Philosophy (B2)
-
-Completed.
-
-Authoritative documents:
-
-* Vision
-* Mission
-* Philosophy
-* Constitution
-* Core Values
-* Engineering Principles
+| Milestone                   | Status     |
+| --------------------------- | ---------- |
+| B1 — Repository Foundation  | ✅ Complete |
+| B2 — Philosophy             | ✅ Complete |
+| B3 — Genome                 | ✅ Complete |
+| B5.1 — RFC-0001 to RFC-0005 | ✅ Complete |
+| B5.2 — RFC-0006 to RFC-0010 | ✅ Complete |
+| B5.3 — RFC-0011 to RFC-0015 | ✅ Complete |
+| B5.4 — RFC-0016 to RFC-0020 | ✅ Complete |
+| B5.5 — RFC-0021 to RFC-0025 | ✅ Complete |
 
 ---
 
-## Genome (B3)
+# Approved RFCs
 
-Completed.
+## Foundation
 
-Authoritative document:
+* RFC-0001 — ForgeOS Genome
+* RFC-0002 — Knowledge Model
+* RFC-0003 — Knowledge Graph
+* RFC-0004 — Organization Model
+* RFC-0005 — Forge Pipeline
 
-* GENOME.md
+## Governance
 
----
+* RFC-0006 — Executive Meeting Protocol
+* RFC-0007 — Decision Authority Matrix
+* RFC-0008 — Executive Memory
+* RFC-0009 — Knowledge Promotion
+* RFC-0010 — Blueprint Library
 
-## Initial Architecture RFCs (B5)
+## Organizational Capability
 
-Completed through RFC-0020.
+* RFC-0011 — Capability Library
+* RFC-0012 — Experience Capture
+* RFC-0013 — AI Abstraction Layer
+* RFC-0014 — ForgeOS Identity
+* RFC-0015 — Digital Workforce Framework
 
----
+## Organizational Operations
 
-# RFC Index
+* RFC-0016 — Organizational Operating Model
+* RFC-0017 — Knowledge Ownership
+* RFC-0018 — Decision Traceability
+* RFC-0019 — Blueprint Inheritance
+* RFC-0020 — Engineering Standards Framework
 
-| RFC      | Title                           | Status   |
-| -------- | ------------------------------- | -------- |
-| RFC-0001 | ForgeOS Genome                  | Approved |
-| RFC-0002 | Knowledge Model                 | Approved |
-| RFC-0003 | Knowledge Graph                 | Approved |
-| RFC-0004 | Organization Model              | Approved |
-| RFC-0005 | Forge Pipeline                  | Approved |
-| RFC-0006 | Executive Meeting Protocol      | Approved |
-| RFC-0007 | Decision Authority Matrix       | Approved |
-| RFC-0008 | Executive Memory                | Approved |
-| RFC-0009 | Knowledge Promotion             | Approved |
-| RFC-0010 | Blueprint Library               | Approved |
-| RFC-0011 | Capability Library              | Approved |
-| RFC-0012 | Experience Capture              | Approved |
-| RFC-0013 | AI Abstraction Layer            | Approved |
-| RFC-0014 | ForgeOS Identity                | Approved |
-| RFC-0015 | Digital Workforce Framework     | Approved |
-| RFC-0016 | Organizational Operating Model  | Approved |
-| RFC-0017 | Knowledge Ownership             | Approved |
-| RFC-0018 | Decision Traceability           | Approved |
-| RFC-0019 | Blueprint Inheritance           | Approved |
-| RFC-0020 | Engineering Standards Framework | Approved |
-
----
-
-# Upcoming RFC Series
-
-The next architectural work begins with:
+## Operational Architecture
 
 * RFC-0021 — Mission Engine
 * RFC-0022 — Process Engine
@@ -96,8 +75,20 @@ The next architectural work begins with:
 
 ---
 
+# Next RFC Series
+
+Bootstrap Milestone **B5.6**
+
+* RFC-0026 — Professional Framework
+* RFC-0027 — Skill Framework
+* RFC-0028 — Competency Matrix
+* RFC-0029 — Team Formation Engine
+* RFC-0030 — Executive Dashboard
+
+---
+
 # Ownership
 
-The ForgeOS Architecture Office maintains this index.
+Maintained by the ForgeOS Architecture Office.
 
-No architectural decision should exist without being referenced here.
+This index is the authoritative navigation document for all architectural decisions.

@@ -1,19 +1,15 @@
 # Next Session
 
-Continue with:
-
-**Bootstrap Milestone B5.5**
+Continue with **Bootstrap Milestone B5.6**.
 
 Generate:
 
-* RFC-0021 — Mission Engine
-* RFC-0022 — Process Engine
-* RFC-0023 — Context Builder
-* RFC-0024 — Engineering Memory
-* RFC-0025 — Organization Health
+* RFC-0026 — Professional Framework
+* RFC-0027 — Skill Framework
+* RFC-0028 — Competency Matrix
+* RFC-0029 — Team Formation Engine
+* RFC-0030 — Executive Dashboard
 
-No redesign work is required.
+The repository is now focused on workforce architecture and executive operational capabilities.
 
-Continue extending the approved ForgeOS architecture into production-quality engineering documentation.
-
-GitHub remains the permanent source of truth.
+Continue extending approved architecture into implementation-ready engineering documentation.

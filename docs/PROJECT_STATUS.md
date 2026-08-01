@@ -6,64 +6,53 @@
 
 # Current Phase
 
-**Repository Bootstrap**
+Repository Bootstrap
 
 ---
 
 # Current Milestone
 
-**Bootstrap Milestone B5.4**
+**Bootstrap Milestone B5.5**
 
 Completed.
 
 ---
 
-# Completed Milestones
+# Completed Work
 
-* ✅ B1 — Repository Foundation
-* ✅ B2 — Philosophy
-* ✅ B3 — Genome
-* ✅ B5.1 — RFC-0001 to RFC-0005
-* ✅ B5.2 — RFC-0006 to RFC-0010
-* ✅ B5.3 — RFC-0011 to RFC-0015
-* ✅ B5.4 — RFC-0016 to RFC-0020
+* Repository Foundation
+* Philosophy
+* Genome
+* RFC-0001 through RFC-0025
 
----
+ForgeOS now possesses a stable architectural foundation covering:
 
-# Current Repository State
-
-The repository now contains:
-
-* Repository foundation documents
-* Philosophy documents
-* Genome specification
-* Twenty approved architectural RFCs
-* Engineering governance foundation
-
-The repository is now transitioning from foundational architecture toward operational architecture.
+* organizational architecture;
+* governance;
+* knowledge systems;
+* execution model;
+* context construction;
+* engineering memory;
+* organizational health.
 
 ---
 
 # Next Milestone
 
-**B5.5**
+**Bootstrap Milestone B5.6**
 
-RFC-0021 through RFC-0025.
+Primary objectives:
 
-Focus:
-
-* Mission Engine
-* Process Engine
-* Context Builder
-* Engineering Memory
-* Organization Health
+* Professional Framework
+* Skill Framework
+* Competency Matrix
+* Team Formation Engine
+* Executive Dashboard
 
 ---
 
-# Overall Status
+# Overall Progress
 
-Repository Bootstrap is progressing successfully.
+Repository bootstrap is progressing according to plan.
 
-Foundational architecture is considered established.
-
-Subsequent work will increasingly define executable platform behavior.
+The project is transitioning from foundational organizational architecture toward operational workforce architecture.
