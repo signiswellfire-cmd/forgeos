@@ -1,6 +1,6 @@
 # Next Session
 
-**Document Version:** 1.0.0
+**Document Version:** 1.2.0
 
 **Last Updated:** 2026-08-01
 
@@ -8,95 +8,127 @@
 
 # Purpose
 
-This document allows any future engineering session to resume work immediately without relying on previous conversations.
+This document enables any future engineering session to resume work immediately from the repository without relying on previous conversations.
 
-Every engineering session should begin by reading this document together with:
+It identifies the current engineering state, the next engineering objective, and the sequence of work required to continue building ForgeOS.
 
-* `docs/PROJECT_STATUS.md`
-* `docs/HANDOVER.md`
-* The latest completed RFC, TDS, and TDR (when available)
-
-The repository—not conversation history—is the authoritative engineering memory.
-
----
-
-# Current Milestone
-
-**Bootstrap Milestone:** B1 — Repository Foundation
-
-**Status:** In Progress
-
----
-
-# Recently Completed
-
-Repository foundation documents completed:
-
-* README.md
-* ROADMAP.md
-* CONTRIBUTING.md
-* CODE_OF_CONDUCT.md
-* LICENSE
-* docs/FOUNDER_GUIDE.md
-* docs/PROJECT_STATUS.md
-
----
-
-# Immediate Tasks
-
-Complete Bootstrap Milestone B1 by generating:
+Every engineering session should begin by reading:
 
 1. `docs/HANDOVER.md`
-2. `docs/DECISION_INDEX.md`
+2. `docs/PROJECT_STATUS.md`
+3. `docs/NEXT_SESSION.md`
 
-After Bootstrap Milestone B1 is complete:
+These documents provide the operational context required to continue development.
 
-1. Begin Bootstrap Milestone B2.
-2. Create the philosophy documents:
+---
 
-   * `docs/philosophy/VISION.md`
-   * `docs/philosophy/MISSION.md`
-   * `docs/philosophy/PHILOSOPHY.md`
-   * `docs/philosophy/CONSTITUTION.md`
-   * `docs/philosophy/CORE_VALUES.md`
-   * `docs/philosophy/ENGINEERING_PRINCIPLES.md`
+# Current State
+
+## Repository Status
+
+Repository Bootstrap is complete through **Bootstrap Milestone B4 — Engineering Standards**.
+
+The repository now contains:
+
+* Repository governance
+* Product philosophy
+* Organizational genome
+* Engineering standards
+
+These documents collectively establish the permanent engineering foundation of ForgeOS.
+
+---
+
+# Current Objective
+
+Begin **Bootstrap Milestone B5 — RFC Foundation**.
+
+The objective of B5 is to transform the approved architecture into production-quality engineering specifications.
+
+RFCs become the authoritative architectural source of truth for implementation.
+
+---
+
+# Immediate Work Queue
+
+Engineering shall proceed in the following order.
+
+## RFC-0001
+
+**ForgeOS Genome**
+
+Formalize the organizational identity model established by `docs/genome/GENOME.md`.
+
+---
+
+## RFC-0002
+
+**Knowledge Model**
+
+Define Knowledge Objects, ownership, lifecycle, promotion, relationships, and persistence strategy.
+
+---
+
+## RFC-0003
+
+**Knowledge Graph**
+
+Define relationships between knowledge entities, traceability, dependency management, and organizational memory.
+
+---
+
+## RFC-0004
+
+**Organization Model**
+
+Formalize organizations, professionals, teams, missions, responsibilities, governance, and authority.
+
+---
+
+## RFC-0005
+
+**Forge Pipeline**
+
+Define the engineering lifecycle from idea to permanent organizational knowledge.
 
 ---
 
 # Engineering Priorities
 
-Priority order:
+The current engineering priorities are:
 
-1. Preserve engineering knowledge.
-2. Complete repository bootstrap.
-3. Maintain documentation quality comparable to professional engineering projects.
-4. Avoid undocumented architectural changes.
-5. Delay implementation until the documentation foundation is complete.
+1. Preserve architectural consistency.
+2. Convert approved concepts into authoritative RFCs.
+3. Avoid duplication of engineering knowledge.
+4. Maintain documentation quality comparable to mature engineering organizations.
+5. Delay implementation until the architectural documentation is sufficiently complete.
 
 ---
 
 # Repository Rules
 
-Before implementation begins:
+The following repository rules remain in effect:
 
-* Every major architectural decision must have a corresponding RFC, TDS, or TDR.
-* Every permanent decision must exist within the repository.
-* Avoid duplicated knowledge.
-* Reference authoritative documents instead of repeating them.
+* Documentation before implementation.
+* One authoritative owner for every permanent concept.
+* Git is the permanent engineering memory.
+* Conversations are temporary working memory.
+* Every architectural decision must be traceable.
+* Implementation follows documentation.
 
 ---
 
-# Founder Interaction
+# Founder Decisions
 
-Engineering should proceed autonomously unless one of the following changes:
+Engineering should continue autonomously unless one of the following changes:
 
 * Product vision
 * Business strategy
 * Licensing
 * Public API direction
-* Long-term product positioning
+* Long-term architectural direction
 
-Routine engineering decisions should not require Founder approval.
+Routine engineering decisions remain delegated to the Chief Software Architect.
 
 ---
 
@@ -104,23 +136,17 @@ Routine engineering decisions should not require Founder approval.
 
 Every future engineering session should:
 
-1. Read:
-
-   * `docs/HANDOVER.md`
-   * `docs/PROJECT_STATUS.md`
-   * `docs/NEXT_SESSION.md`
+1. Read the repository maintenance documents.
 2. Confirm the current milestone.
-3. Continue from the next incomplete repository artifact.
-4. Update this document whenever the engineering state changes.
+3. Continue from the next incomplete engineering artifact.
+4. Update repository maintenance documents only when a milestone is completed or a significant project state change occurs.
 
 ---
 
-# Completion Criteria
+# Definition of Success
 
-This document should always answer one question:
+The next engineering session is successful when:
 
-> "If engineering resumes right now, what is the single most important thing to work on next?"
-
-Current answer:
-
-> Complete Bootstrap Milestone B1 by generating `docs/HANDOVER.md` and `docs/DECISION_INDEX.md`, then immediately begin Bootstrap Milestone B2.
+* RFC-0001 is completed as the authoritative specification for the ForgeOS Genome.
+* Subsequent RFCs continue without architectural redesign.
+* Repository documentation continues to replace temporary conversation knowledge.

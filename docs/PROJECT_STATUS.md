@@ -1,6 +1,6 @@
 # ForgeOS Project Status
 
-**Document Version:** 1.1.0
+**Document Version:** 1.2.0
 
 **Last Updated:** 2026-08-01
 
@@ -8,72 +8,95 @@
 
 # Purpose
 
-This document provides the authoritative snapshot of the current engineering state of the ForgeOS repository.
+This document provides the authoritative engineering status of the ForgeOS repository.
 
-It enables any contributor to understand the project's progress without relying on previous conversations.
+Unlike architectural documents, which describe how ForgeOS is designed, this document records the current state of repository maturity, engineering progress, and implementation readiness.
+
+It should always answer one question:
+
+> **"What is the current state of ForgeOS?"**
 
 ---
 
 # Current Phase
 
-**Phase:** Repository Bootstrap
+**Project Phase**
 
-**Current Bootstrap Milestone:** **B3 — Genome**
+Repository Bootstrap
 
-**Overall Status:** Active Development
+**Current Bootstrap Milestone**
+
+**B5 — RFC Foundation**
+
+**Overall Status**
+
+Documentation First Development
 
 ---
 
 # Bootstrap Progress
 
-| Milestone                      | Status      |
-| ------------------------------ | ----------- |
-| B1 — Repository Foundation     | ✅ Completed |
-| B2 — Philosophy                | ✅ Completed |
-| B3 — Genome                    | ✅ Completed |
-| B4 — Engineering Standards     | Next        |
-| B5 — RFC / TDS / TDR Bootstrap | Pending     |
-| Core Implementation            | Not Started |
+| Milestone                  | Status      |
+| -------------------------- | ----------- |
+| B1 — Repository Foundation | ✅ Completed |
+| B2 — Philosophy            | ✅ Completed |
+| B3 — Genome                | ✅ Completed |
+| B4 — Engineering Standards | ✅ Completed |
+| B5 — RFC Foundation        | **Current** |
 
 ---
 
-# Completed Repository Foundation
+# Repository Completion
 
-* README.md
-* ROADMAP.md
-* CONTRIBUTING.md
-* CODE_OF_CONDUCT.md
-* LICENSE
-* docs/FOUNDER_GUIDE.md
-* docs/PROJECT_STATUS.md
-* docs/NEXT_SESSION.md
-* docs/HANDOVER.md
-* docs/DECISION_INDEX.md
+## Repository Foundation
 
----
+Status: **Completed**
 
-# Completed Philosophy Documents
+Artifacts:
 
-* docs/philosophy/VISION.md
-* docs/philosophy/MISSION.md
-* docs/philosophy/PHILOSOPHY.md
-* docs/philosophy/CONSTITUTION.md
-* docs/philosophy/CORE_VALUES.md
-* docs/philosophy/ENGINEERING_PRINCIPLES.md
+* README
+* Roadmap
+* Contribution Guide
+* Code of Conduct
+* License
+* Founder Guide
+* Project Status
+* Next Session
+* Handover
+* Decision Index
 
 ---
 
-# Completed Genome
+## Philosophy
 
-* docs/genome/GENOME.md
+Status: **Completed**
+
+Artifacts:
+
+* Vision
+* Mission
+* Philosophy
+* Constitution
+* Core Values
+* Engineering Principles
 
 ---
 
-# Current Objective
+## Organizational Identity
 
-Begin **Bootstrap Milestone B4 — Engineering Standards**.
+Status: **Completed**
 
-The initial standards to be established are:
+Artifacts:
+
+* Genome
+
+---
+
+## Engineering Standards
+
+Status: **Completed**
+
+Artifacts:
 
 * Coding Standard
 * Documentation Standard
@@ -82,21 +105,35 @@ The initial standards to be established are:
 * Git Standard
 * Naming Standard
 
-These standards will govern all future implementation work and engineering documentation.
+---
+
+## RFC Foundation
+
+Status: **Not Started**
+
+Next documents:
+
+* RFC-0001 — ForgeOS Genome
+* RFC-0002 — Knowledge Model
+* RFC-0003 — Knowledge Graph
+* RFC-0004 — Organization Model
 
 ---
 
-# Implementation Status
+# Implementation Readiness
 
-| Area            | Status      |
-| --------------- | ----------- |
-| forgeos-core    | Not Started |
-| forgeos-desktop | Not Started |
-| forgeos-sdk     | Not Started |
-| Plugin SDK      | Not Started |
-| Marketplace     | Not Started |
+| Area                    | Status      |
+| ----------------------- | ----------- |
+| Repository Governance   | ✅ Ready     |
+| Philosophy              | ✅ Ready     |
+| Organizational Identity | ✅ Ready     |
+| Engineering Standards   | ✅ Ready     |
+| RFC Series              | Pending     |
+| TDS Series              | Pending     |
+| TDR Series              | Pending     |
+| Source Code             | Not Started |
 
-Implementation remains intentionally deferred until the engineering knowledge base reaches production quality.
+Implementation will begin only after the architectural documentation reaches the required level of maturity.
 
 ---
 
@@ -104,38 +141,67 @@ Implementation remains intentionally deferred until the engineering knowledge ba
 
 ## Documentation
 
-Status: Excellent
+Status:
 
-The repository now contains the foundational governance, philosophy, and organizational identity required for implementation.
+**Excellent**
 
-## Architecture
+The repository now contains the governing philosophy, organizational identity, and engineering standards necessary to support long-term development.
 
-Status: Stable
+---
+
+## Architectural Stability
+
+Status:
+
+**Stable**
 
 No architectural redesigns are pending.
+
+Future work will elaborate the approved architecture through RFCs rather than redefining it.
+
+---
 
 ## Technical Debt
 
 Known technical debt:
 
-* None.
+None.
 
-The project has not entered implementation.
+Implementation has not yet begun.
 
 ---
 
-# Upcoming Milestones
+# Immediate Objective
 
-1. Bootstrap Milestone B4 — Engineering Standards
-2. Bootstrap Milestone B5 — RFC Series
-3. Technical Design Specifications
-4. Technology Decision Records
-5. forgeos-core implementation
+Begin **Bootstrap Milestone B5** by producing production-quality engineering RFCs.
+
+The initial sequence is:
+
+1. RFC-0001 — ForgeOS Genome
+2. RFC-0002 — Knowledge Model
+3. RFC-0003 — Knowledge Graph
+4. RFC-0004 — Organization Model
+5. RFC-0005 — Forge Pipeline
+
+---
+
+# Long-Term Roadmap
+
+Following completion of the RFC series:
+
+1. Technical Design Specifications
+2. Technology Decision Records
+3. forgeos-core implementation
+4. Founder Experience MVP
+5. Knowledge Engine
+6. Engineering Platform
 
 ---
 
 # Repository Source of Truth
 
-The Git repository is the permanent engineering memory of ForgeOS.
+The repository is the permanent engineering memory of ForgeOS.
 
-Every significant engineering decision must be represented by an authoritative document before implementation proceeds.
+Every significant engineering decision must exist within an authoritative repository document before implementation proceeds.
+
+Implementation shall always follow documented architecture.
