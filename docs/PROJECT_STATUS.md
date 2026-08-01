@@ -12,7 +12,7 @@ Repository Bootstrap
 
 # Current Milestone
 
-**Bootstrap Milestone B5.8**
+**Bootstrap Milestone B5.9**
 
 Completed.
 
@@ -20,57 +20,51 @@ Completed.
 
 # Completed Architecture
 
-The repository now contains:
+The repository now includes:
 
 * Repository Foundation
 * Philosophy
 * Genome
 * Governance Architecture
-* Knowledge Architecture
 * Operational Architecture
 * Workforce Architecture
-* Organizational Intelligence Architecture
-* Knowledge Intelligence Architecture
-* RFC-0001 through RFC-0040
+* Organizational Intelligence
+* Knowledge Intelligence
+* Distributed Organization Architecture
+* RFC-0001 through RFC-0045
 
 ---
 
 # Architectural Coverage
 
-ForgeOS now defines:
+ForgeOS now provides architectural definitions for:
 
 * Organizational Identity
-* Knowledge Graph
-* Executive Governance
-* Digital Workforce
-* Mission Execution
-* Process Execution
-* Organizational Intelligence
+* Organizational Memory
+* Knowledge Federation
+* Multi-Organization Ecosystems
 * Strategic Planning
-* Digital Twin
-* Organizational Learning
-* Enterprise Knowledge Intelligence
+* Organizational Evolution
+* Autonomous Organizations
 
-The architectural foundation is now sufficiently mature to support distributed organizational intelligence.
+The platform architecture now supports organizations operating independently while collaborating within governed ecosystems.
 
 ---
 
 # Next Milestone
 
-**Bootstrap Milestone B5.9**
+**Bootstrap Milestone B5.10**
 
-Focus:
+Focus areas:
 
-* Organization Memory
-* Knowledge Federation
-* Multi-Organization Architecture
-* Organization Evolution
-* Autonomous Organizations
+* Constitutional Governance
+* Organizational Policy
+* Governance Automation
+* Compliance
+* Executive Oversight
 
 ---
 
 # Overall Progress
 
-Repository bootstrap continues successfully.
-
-ForgeOS is transitioning from enterprise knowledge intelligence toward distributed organizational intelligence.
+The architectural foundation now extends beyond a single organization and supports distributed organizational ecosystems governed by shared constitutional principles.

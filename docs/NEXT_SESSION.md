@@ -1,13 +1,13 @@
 # Next Session
 
-Continue with **Bootstrap Milestone B5.9**.
+Continue with **Bootstrap Milestone B5.10**.
 
 Generate:
 
-* RFC-0041 — Organization Memory Engine
-* RFC-0042 — Knowledge Federation
-* RFC-0043 — Multi-Organization Architecture
-* RFC-0044 — Organization Evolution Engine
-* RFC-0045 — Autonomous Organization Framework
+* RFC-0046 — Constitutional Governance Engine
+* RFC-0047 — Organizational Policy Engine
+* RFC-0048 — Governance Automation Engine
+* RFC-0049 — Organizational Compliance Engine
+* RFC-0050 — Executive Oversight Framework
 
-The next milestone extends ForgeOS from knowledge intelligence into distributed organizational intelligence.
+This milestone establishes the constitutional governance architecture that will govern all future ForgeOS Organizations and autonomous operational capabilities.

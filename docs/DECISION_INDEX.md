@@ -1,6 +1,6 @@
 # ForgeOS Decision Index
 
-**Version:** 1.4.0
+**Version:** 1.5.0
 
 **Last Updated:** 2026-08-01
 
@@ -8,9 +8,9 @@
 
 # Purpose
 
-This document is the authoritative navigation index for every permanent architectural decision within ForgeOS.
+This document is the authoritative navigation index for all permanent architectural decisions within ForgeOS.
 
-Every architectural decision shall have exactly one authoritative owner.
+Every permanent architectural decision shall have exactly one authoritative owner.
 
 ---
 
@@ -29,6 +29,7 @@ Every architectural decision shall have exactly one authoritative owner.
 | B5.6                       | ✅ Complete |
 | B5.7                       | ✅ Complete |
 | B5.8                       | ✅ Complete |
+| B5.9                       | ✅ Complete |
 
 ---
 
@@ -66,23 +67,27 @@ RFC-0031 – RFC-0035
 
 RFC-0036 – RFC-0040
 
+## Distributed Organization Architecture
+
+RFC-0041 – RFC-0045
+
 ---
 
 # Approved RFC Count
 
-**40 Approved RFCs**
+**45 Approved RFCs**
 
 ---
 
 # Next RFC Series
 
-Bootstrap Milestone **B5.9**
+Bootstrap Milestone **B5.10**
 
-* RFC-0041 — Organization Memory Engine
-* RFC-0042 — Knowledge Federation
-* RFC-0043 — Multi-Organization Architecture
-* RFC-0044 — Organization Evolution Engine
-* RFC-0045 — Autonomous Organization Framework
+* RFC-0046 — Constitutional Governance Engine
+* RFC-0047 — Organizational Policy Engine
+* RFC-0048 — Governance Automation Engine
+* RFC-0049 — Organizational Compliance Engine
+* RFC-0050 — Executive Oversight Framework
 
 ---
 
@@ -90,4 +95,4 @@ Bootstrap Milestone **B5.9**
 
 Maintained by the ForgeOS Architecture Office.
 
-This document is the single authoritative navigation index for all approved architectural decisions.
+This document is the authoritative navigation index for all approved architectural decisions.
