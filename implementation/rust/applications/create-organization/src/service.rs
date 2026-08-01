@@ -6,7 +6,7 @@
 
 use crate::command::CreateOrganizationCommand;
 use crate::errors::{CreateOrganizationError, OrganizationField};
-use crate::OrganizationRepository;
+use forgeos_organization_domain::OrganizationRepository;
 use forgeos_organization_domain::{
     Organization, OrganizationIdGenerator, OrganizationName, OrganizationType,
 };

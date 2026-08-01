@@ -4,7 +4,10 @@
 //! They are distinct from domain errors and may include infrastructure-level
 //! failure information that is not appropriate for the domain layer.
 
-use crate::OrganizationError;
+use forgeos_organization_domain::{
+    OrganizationError,
+    OrganizationField as DomainOrganizationField,
+};
 
 /// Application-level error for the Create Organization use case.
 #[derive(Debug, Clone, PartialEq, Eq)]
@@ -36,8 +39,8 @@ impl From<OrganizationError> for CreateOrganizationError {
         match error {
             OrganizationError::Validation(field) => {
                 let app_field = match field {
-                    crate::OrganizationField::Name => OrganizationField::Name,
-                    crate::OrganizationField::OrganizationType => OrganizationField::OrganizationType,
+                    DomainOrganizationField::Name => OrganizationField::Name,
+                    DomainOrganizationField::OrganizationType => OrganizationField::OrganizationType,
                 };
                 CreateOrganizationError::Validation(app_field)
             }
@@ -55,7 +58,7 @@ mod tests {
 
     #[test]
     fn domain_validation_error_maps_to_application_validation() {
-        let domain_error = OrganizationError::Validation(crate::OrganizationField::Name);
+        let domain_error = OrganizationError::Validation(DomainOrganizationField::Name);
         let app_error = CreateOrganizationError::from(domain_error);
 
         assert_eq!(

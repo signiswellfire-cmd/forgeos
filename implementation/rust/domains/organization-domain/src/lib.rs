@@ -19,7 +19,7 @@ mod organization_created;
 mod organization_repository;
 mod value_objects;
 
-pub use errors::OrganizationError;
+pub use errors::{OrganizationError, OrganizationField};
 pub use id_generation::{DefaultOrganizationIdGenerator, OrganizationIdGenerator};
 pub use org_domain_event::OrganizationDomainEvent;
 pub use organization::Organization;
