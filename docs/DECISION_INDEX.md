@@ -1,6 +1,6 @@
 # ForgeOS Decision Index
 
-**Version:** 1.2.0
+**Version:** 1.3.0
 
 **Last Updated:** 2026-08-01
 
@@ -8,13 +8,13 @@
 
 # Purpose
 
-This document is the authoritative navigation index for every permanent engineering decision within ForgeOS.
+This document is the authoritative navigation index for every permanent architectural decision within ForgeOS.
 
-Each architectural decision shall have exactly one authoritative owner.
+Every permanent architectural decision shall exist in exactly one authoritative document.
 
 ---
 
-# Bootstrap Status
+# Bootstrap Progress
 
 | Milestone                  | Status     |
 | -------------------------- | ---------- |
@@ -27,55 +27,62 @@ Each architectural decision shall have exactly one authoritative owner.
 | B5.4                       | ✅ Complete |
 | B5.5                       | ✅ Complete |
 | B5.6                       | ✅ Complete |
+| B5.7                       | ✅ Complete |
 
 ---
 
-# RFC Series
+# Approved RFC Series
 
 ## Foundation
 
-RFC-0001 through RFC-0005
+RFC-0001 — RFC-0005
 
 ## Governance
 
-RFC-0006 through RFC-0010
+RFC-0006 — RFC-0010
 
 ## Organizational Capability
 
-RFC-0011 through RFC-0015
+RFC-0011 — RFC-0015
 
 ## Organizational Operations
 
-RFC-0016 through RFC-0020
+RFC-0016 — RFC-0020
 
 ## Operational Architecture
 
-RFC-0021 through RFC-0025
+RFC-0021 — RFC-0025
 
 ## Workforce Architecture
 
-RFC-0026 through RFC-0030
+RFC-0026 — RFC-0030
+
+## Organizational Intelligence
+
+RFC-0031 — RFC-0035
 
 ---
 
 # Approved RFC Count
 
-**30 Approved RFCs**
+**35 Approved RFCs**
 
 ---
 
 # Next RFC Series
 
-Bootstrap Milestone **B5.7**
+Bootstrap Milestone **B5.8**
 
-* RFC-0031 — Organization Digital Twin
-* RFC-0032 — Organizational Intelligence Engine
-* RFC-0033 — Strategic Planning Engine
-* RFC-0034 — Organization DNA
-* RFC-0035 — Continuous Improvement Engine
+* RFC-0036 — Knowledge Query Engine
+* RFC-0037 — Knowledge Recommendation Engine
+* RFC-0038 — Organizational Search Engine
+* RFC-0039 — Knowledge Lifecycle Engine
+* RFC-0040 — Organizational Learning Engine
 
 ---
 
 # Ownership
 
 Maintained by the ForgeOS Architecture Office.
+
+This document is the single authoritative navigation index for all approved architectural decisions.
