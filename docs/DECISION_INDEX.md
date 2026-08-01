@@ -19,8 +19,8 @@ Every permanent architectural decision shall have exactly one authoritative owne
 | Phase                         | Status     |
 | ----------------------------- | ---------- |
 | Bootstrap Phase               | ✅ Complete |
-| Implementation Preparation    | 🟢 Active   |
-| Implementation Milestone 1.5  | ⏳ Pending Execution |
+| Implementation Preparation    | ✅ Complete |
+| Implementation Milestone 1.5  | 🟢 Active   |
 | Create Organization Slice     | ⏳ Pending (after 1.5) |
 
 ---
@@ -59,7 +59,7 @@ Every permanent architectural decision shall have exactly one authoritative owne
 | MILESTONE-001.2 — Crate Boundary Plan        | ✅ Approved     |
 | MILESTONE-001.3 — Crate Initialization Plan  | ✅ Approved     |
 | MILESTONE-001.4 — Cargo Member Initialization | ✅ Complete     |
-| MILESTONE-001.5 — Organization Domain Foundation | ⏳ Approved Scope — Execution Pending |
+| MILESTONE-001.5 — Organization Domain Foundation | ✅ Complete     |
 
 ---
 

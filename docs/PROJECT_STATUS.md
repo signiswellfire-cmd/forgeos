@@ -34,6 +34,7 @@ Scope approved. Execution pending.
 * Implementation Milestone 001.2 — Crate Boundary Plan (approved)
 * Implementation Milestone 001.3 — Crate Initialization Plan (approved)
 * Implementation Milestone 001.4 — Cargo Member Initialization
+* Implementation Milestone 001.5.2 — Organization Domain Foundation
 
 ---
 
@@ -69,9 +70,11 @@ The repository now includes:
 
 # Next Milestone
 
-**Implementation Milestone 001.5 — Organization Domain Foundation**
+**Implementation Milestone 001.5.2 — Organization Domain Foundation** is complete.
 
-Objective: implement the Organization Domain Foundation inside the `forgeos-organization-domain` crate — the Organization aggregate, approved value objects, the Domain-owned `OrganizationRepository` contract, the `OrganizationCreated` domain event, the approved domain error model, and deterministic domain tests — as defined by `docs/implementation/MILESTONE-001.5-ORGANIZATION-DOMAIN.md`.
+The Organization Domain Foundation was implemented inside the `forgeos-organization-domain` crate — the Organization aggregate, approved value objects, the Domain-owned `OrganizationRepository` contract, the `OrganizationCreated` domain event, the approved domain error model, and deterministic domain tests — as defined by `docs/implementation/MILESTONE-001.5-ORGANIZATION-DOMAIN.md` and recorded in `docs/implementation/MILESTONE-001.5.2-ORGANIZATION-DOMAIN-IMPLEMENTATION.md`.
+
+`cargo check --workspace` passes. `cargo test --workspace` is currently blocked by a Windows linker/toolchain configuration issue (self-contained MinGW `dlltool` `CreateProcess` failure); this is an environment blocker, not a code blocker.
 
 Additional RFC expansion beyond the current approved RFC set is deferred until implementation experience requires new architectural decisions.
 
@@ -80,3 +83,5 @@ Additional RFC expansion beyond the current approved RFC set is deferred until i
 # Overall Progress
 
 The approved architecture is ready to guide implementation. Implementation work must follow the established RFC, TDS, TDR, Architecture Package, and ISP authority order without introducing undocumented technology or architectural decisions.
+
+Cargo is installed and `cargo check` passes; `cargo test` execution is currently blocked by linker/toolchain configuration.
