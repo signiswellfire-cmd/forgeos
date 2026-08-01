@@ -6,37 +6,33 @@
 
 # Repository Status
 
-Bootstrap Milestones B1 through B5.5 are complete.
+Bootstrap Milestones B1 through B5.6 are complete.
 
-The repository now contains:
+The repository currently contains:
 
-* Foundation documents
 * Philosophy
 * Genome
-* RFC-0001 through RFC-0025
-
-The architectural core of ForgeOS has been established.
+* Governance
+* Knowledge Architecture
+* Organizational Architecture
+* Workforce Architecture
+* Executive Architecture
+* RFC-0001 through RFC-0030
 
 ---
 
-# Current Focus
+# Current Direction
 
-Continue with Bootstrap Milestone B5.6.
+Continue with Bootstrap Milestone B5.7.
+
+Next architectural work focuses on organizational intelligence and strategic evolution.
 
 Upcoming RFCs:
 
-* RFC-0026 — Professional Framework
-* RFC-0027 — Skill Framework
-* RFC-0028 — Competency Matrix
-* RFC-0029 — Team Formation Engine
-* RFC-0030 — Executive Dashboard
+* RFC-0031 — Organization Digital Twin
+* RFC-0032 — Organizational Intelligence Engine
+* RFC-0033 — Strategic Planning Engine
+* RFC-0034 — Organization DNA
+* RFC-0035 — Continuous Improvement Engine
 
----
-
-# Architectural Direction
-
-Current work extends the organizational operating model into a complete digital workforce architecture.
-
-Implementation work has not yet begun.
-
-GitHub remains the authoritative source of truth.
+GitHub remains the authoritative project memory.
