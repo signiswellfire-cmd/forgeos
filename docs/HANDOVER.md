@@ -28,6 +28,7 @@ Completed milestones:
 * Implementation Milestone 001.5.3 — Organization Domain Test Validation
 * Implementation Milestone 001.6 — Create Organization Application Layer
 * Implementation Milestone 001.7 — Organization Infrastructure Layer
+* Implementation Milestone 001.8 — Organization Platform Layer
 
 The approved implementation baseline includes RFC-0001 through RFC-0045, TDS-0001 through TDS-0004, TDR-0001 through TDR-0006, the Architecture Package, ISP-0001 through ISP-0010, and the approved Milestone 1 domain and technology decisions (MILESTONE-001-DOMAIN-DECISIONS, TDR-0006 OrganizationId Generation, and the OrganizationType Decision).
 
@@ -35,13 +36,13 @@ The approved implementation baseline includes RFC-0001 through RFC-0045, TDS-000
 
 # Current Direction
 
-**Implementation Milestone 001.5.2 — Organization Domain Foundation** is complete.
+**Implementation Milestone 001.8 — Organization Platform Layer** is complete.
 
-The Organization Domain Foundation was implemented inside the `forgeos-organization-domain` crate: the Organization aggregate, approved value objects, the Domain-owned `OrganizationRepository` contract, the `OrganizationCreated` domain event, the approved domain error model, and deterministic domain tests — as defined by `MILESTONE-001.5-ORGANIZATION-DOMAIN.md` and recorded in `MILESTONE-001.5.2-ORGANIZATION-DOMAIN-IMPLEMENTATION.md`.
+The Organization Platform Layer was implemented inside the `forgeos-desktop-platform` crate: the `createOrganization` Tauri IPC command, IPC request/response/error DTOs with Serde serialization, the dependency composition root wiring `SqliteOrganizationRepository` and the `CreateOrganization` application service, and error translation from `CreateOrganizationError` to stable IPC error codes — as defined by `MILESTONE-001.8-ORGANIZATION-PLATFORM.md` and committed at `ae9c6004`.
 
-`cargo check --workspace` passes. `cargo test --workspace` passes with 49 tests passing.
+`cargo check --workspace` passes. `cargo test --workspace` passes with 66 tests passing.
 
-Milestones 1.5.3, 1.6, and 1.7 completed the Create Organization vertical slice through the infrastructure layer. The repository is ready for Milestone 1.8 — Organization Platform Layer (Tauri IPC).
+The Create Organization vertical slice is complete through the platform layer. The repository is ready for Milestone 1.9 — Organization Presentation Layer (frontend integration).
 
 Additional RFC expansion beyond the current approved RFC set is deferred until implementation experience requires new architectural decisions.
 

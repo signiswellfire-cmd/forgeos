@@ -1,24 +1,24 @@
 # Next Session
 
-**Implementation Milestone 001.7 — Organization Infrastructure Layer** is complete.
+**Implementation Milestone 001.8 — Organization Platform Layer** is complete.
 
-Milestones 1.5.2, 1.5.3, 1.6, and 1.7 completed the Create Organization vertical slice through the infrastructure layer.
+Milestones 1.5.2, 1.5.3, 1.6, 1.7, and 1.8 completed the Create Organization vertical slice through the platform layer.
 
 Validation status:
 - `cargo check --workspace` passes for all workspace members.
-- `cargo test --workspace` passes with 49 tests passing.
+- `cargo test --workspace` passes with 66 tests passing.
 
-The repository is ready for Milestone 1.8 scope creation.
+The repository is ready for Milestone 1.9 scope creation.
 
 ---
 
 # Next Milestone
 
-**Milestone 1.8 — Organization Platform Layer (Tauri IPC)**
+**Milestone 1.9 — Organization Presentation Layer (frontend integration)**
 
-The next implementation milestone will implement the Platform layer for the Create Organization vertical slice, exposing the application service through Tauri IPC commands.
+The next implementation milestone will implement the Presentation Layer for the Create Organization vertical slice, exposing the `createOrganization` Tauri command through a desktop frontend.
 
-Scope document does not yet exist. Create the Milestone 1.8 scope document following the approved authority chain:
+Scope document does not yet exist. Create the Milestone 1.9 scope document following the approved authority chain:
 
 RFC
 ↓
