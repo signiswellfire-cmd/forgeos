@@ -1,29 +1,38 @@
 # Next Session
 
-**Implementation Milestone 001.5.2 — Organization Domain Foundation** is complete.
+**Implementation Milestone 001.7 — Organization Infrastructure Layer** is complete.
 
-The Organization Domain Foundation was implemented inside the `forgeos-organization-domain` crate, as recorded in `docs/implementation/MILESTONE-001.5.2-ORGANIZATION-DOMAIN-IMPLEMENTATION.md`.
+Milestones 1.5.2, 1.5.3, 1.6, and 1.7 completed the Create Organization vertical slice through the infrastructure layer.
 
 Validation status:
 - `cargo check --workspace` passes for all workspace members.
-- `cargo test --workspace` is currently blocked by a Windows linker/toolchain configuration issue (self-contained MinGW `dlltool` `CreateProcess` failure); this is an environment blocker, not a code blocker.
+- `cargo test --workspace` passes with 49 tests passing.
 
-Cargo is installed and `cargo check` passes; `cargo test` execution is currently blocked by linker/toolchain configuration.
+The repository is ready for Milestone 1.8 scope creation.
 
 ---
 
 # Next Milestone
 
-**Milestone 1.5.3 — Organization Domain Test Execution and Refinement**
+**Milestone 1.8 — Organization Platform Layer (Tauri IPC)**
 
-Once a working linker environment is available (full MinGW-w64 or Visual Studio Build Tools):
+The next implementation milestone will implement the Platform layer for the Create Organization vertical slice, exposing the application service through Tauri IPC commands.
 
-1. Run `cargo test --workspace` and confirm all 24 deterministic unit tests pass.
-2. Address any test failures.
-3. Commit the implementation baseline with validated test results.
-4. Proceed to the Application layer (`forgeos-create-organization-application`) per the approved MILESTONE-001.5 scope.
+Scope document does not yet exist. Create the Milestone 1.8 scope document following the approved authority chain:
 
-Do not proceed to persistence, IPC, Tauri, or frontend code until the Application layer is complete and validated.
+RFC
+↓
+TDS
+↓
+TDR
+↓
+ARCH
+↓
+ISP
+↓
+Milestone Scope
+↓
+Implementation
 
 Each implementation item must trace to the approved RFC, TDS, TDR, Architecture Package, ISP, and milestone documents. The planning milestones MILESTONE-001.2 (Crate Boundary Plan) and MILESTONE-001.3 (Crate Initialization Plan) are approved.
 

@@ -1,20 +1,20 @@
 # ForgeOS Project Status
 
-**Last Updated:** 2026-08-01
+**Last Updated:** 2026-08-02
 
 ---
 
 # Current Phase
 
-Implementation Preparation Phase
+Implementation Phase
 
 ---
 
 # Current Milestone
 
-**Implementation Milestone 001.5 — Organization Domain Foundation**
+**Implementation Milestone 001.7 — Organization Infrastructure Layer** is complete.
 
-Scope approved. Execution pending.
+The repository is ready for **Milestone 1.8 — Organization Platform Layer (Tauri IPC)** scope creation.
 
 ---
 
@@ -35,6 +35,9 @@ Scope approved. Execution pending.
 * Implementation Milestone 001.3 — Crate Initialization Plan (approved)
 * Implementation Milestone 001.4 — Cargo Member Initialization
 * Implementation Milestone 001.5.2 — Organization Domain Foundation
+* Implementation Milestone 001.5.3 — Organization Domain Test Validation
+* Implementation Milestone 001.6 — Create Organization Application Layer
+* Implementation Milestone 001.7 — Organization Infrastructure Layer
 
 ---
 
@@ -74,7 +77,7 @@ The repository now includes:
 
 The Organization Domain Foundation was implemented inside the `forgeos-organization-domain` crate — the Organization aggregate, approved value objects, the Domain-owned `OrganizationRepository` contract, the `OrganizationCreated` domain event, the approved domain error model, and deterministic domain tests — as defined by `docs/implementation/MILESTONE-001.5-ORGANIZATION-DOMAIN.md` and recorded in `docs/implementation/MILESTONE-001.5.2-ORGANIZATION-DOMAIN-IMPLEMENTATION.md`.
 
-`cargo check --workspace` passes. `cargo test --workspace` is currently blocked by a Windows linker/toolchain configuration issue (self-contained MinGW `dlltool` `CreateProcess` failure); this is an environment blocker, not a code blocker.
+`cargo check --workspace` passes. `cargo test --workspace` passes with 49 tests passing.
 
 Additional RFC expansion beyond the current approved RFC set is deferred until implementation experience requires new architectural decisions.
 
@@ -84,4 +87,4 @@ Additional RFC expansion beyond the current approved RFC set is deferred until i
 
 The approved architecture is ready to guide implementation. Implementation work must follow the established RFC, TDS, TDR, Architecture Package, and ISP authority order without introducing undocumented technology or architectural decisions.
 
-Cargo is installed and `cargo check` passes; `cargo test` execution is currently blocked by linker/toolchain configuration.
+Cargo is installed and `cargo check --workspace` passes. `cargo test --workspace` passes with 49 tests passing.
