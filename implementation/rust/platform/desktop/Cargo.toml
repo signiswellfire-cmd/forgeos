@@ -6,3 +6,10 @@ edition = "2024"
 [dependencies]
 forgeos-create-organization-application = { path = "../../applications/create-organization" }
 forgeos-organization-infrastructure = { path = "../../infrastructure/organization" }
+forgeos-organization-domain = { path = "../../domains/organization-domain" }
+tauri = { version = "2", default-features = false }
+serde = { version = "1", features = ["derive"] }
+
+[dev-dependencies]
+serde_json = "1"
+uuid = { version = "1", features = ["v4"] }
