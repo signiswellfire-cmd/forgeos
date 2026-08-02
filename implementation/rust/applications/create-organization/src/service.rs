@@ -83,7 +83,7 @@ impl<'a, R: OrganizationRepository> CreateOrganization<'a, R> {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use forgeos_organization_domain::id_generation::DefaultOrganizationIdGenerator;
+    use forgeos_organization_domain::{DefaultOrganizationIdGenerator, OrganizationError, OrganizationIdGenerator};
 
     // Mock repository for testing
     #[derive(Debug, Clone, Default)]
