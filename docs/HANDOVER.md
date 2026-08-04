@@ -1,6 +1,6 @@
 # ForgeOS Handover
 
-**Last Updated:** 2026-08-02
+**Last Updated:** 2026-08-04
 
 ---
 
@@ -29,6 +29,7 @@ Completed milestones:
 * Implementation Milestone 001.6 — Create Organization Application Layer
 * Implementation Milestone 001.7 — Organization Infrastructure Layer
 * Implementation Milestone 001.8 — Organization Platform Layer
+* Implementation Milestone 001.9 — Organization Presentation Layer
 
 The approved implementation baseline includes RFC-0001 through RFC-0045, TDS-0001 through TDS-0004, TDR-0001 through TDR-0006, the Architecture Package, ISP-0001 through ISP-0010, and the approved Milestone 1 domain and technology decisions (MILESTONE-001-DOMAIN-DECISIONS, TDR-0006 OrganizationId Generation, and the OrganizationType Decision).
 
@@ -36,13 +37,13 @@ The approved implementation baseline includes RFC-0001 through RFC-0045, TDS-000
 
 # Current Direction
 
-**Implementation Milestone 001.8 — Organization Platform Layer** is complete.
+**Implementation Milestone 001.9 — Organization Presentation Layer** is complete.
 
-The Organization Platform Layer was implemented inside the `forgeos-desktop-platform` crate: the `createOrganization` Tauri IPC command, IPC request/response/error DTOs with Serde serialization, the dependency composition root wiring `SqliteOrganizationRepository` and the `CreateOrganization` application service, and error translation from `CreateOrganizationError` to stable IPC error codes — as defined by `MILESTONE-001.8-ORGANIZATION-PLATFORM.md` and committed at `ae9c6004`.
+The Organization Presentation Layer was implemented inside the `forgeos-organization-presentation` crate: the framework-neutral Create Organization UI composition, the `CreateOrganizationViewModel` with form input and submission status state, the `createOrganization` Tauri command IPC integration with request construction and response/error DTO handling, the presentation composition root, and stable presentation-layer error types — as defined by `MILESTONE-001.9-ORGANIZATION-PRESENTATION.md` and committed at `0f7e869b`.
 
-`cargo check --workspace` passes. `cargo test --workspace` passes with 66 tests passing.
+`cargo check --workspace` passes. `cargo test --workspace` passes with 105 tests passing.
 
-The Create Organization vertical slice is complete through the platform layer. The repository is ready for Milestone 1.9 — Organization Presentation Layer (frontend integration).
+The Create Organization vertical slice is complete through the presentation layer. The repository is ready for Milestone 2.0 — Event Dispatch and Workflow Orchestration.
 
 Additional RFC expansion beyond the current approved RFC set is deferred until implementation experience requires new architectural decisions.
 

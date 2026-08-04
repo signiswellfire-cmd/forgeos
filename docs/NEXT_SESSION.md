@@ -1,24 +1,24 @@
 # Next Session
 
-**Implementation Milestone 001.8 — Organization Platform Layer** is complete.
+**Implementation Milestone 001.9 — Organization Presentation Layer** is complete.
 
-Milestones 1.5.2, 1.5.3, 1.6, 1.7, and 1.8 completed the Create Organization vertical slice through the platform layer.
+Milestones 1.5.2, 1.5.3, 1.6, 1.7, 1.8, and 1.9 completed the Create Organization vertical slice through the presentation layer.
 
 Validation status:
 - `cargo check --workspace` passes for all workspace members.
-- `cargo test --workspace` passes with 66 tests passing.
+- `cargo test --workspace` passes with 105 tests passing.
 
-The repository is ready for Milestone 1.9 scope creation.
+The repository is ready for Milestone 2.0 scope creation.
 
 ---
 
 # Next Milestone
 
-**Milestone 1.9 — Organization Presentation Layer (frontend integration)**
+**Milestone 2.0 — Event Dispatch and Workflow Orchestration**
 
-The next implementation milestone will implement the Presentation Layer for the Create Organization vertical slice, exposing the `createOrganization` Tauri command through a desktop frontend.
+The next implementation milestone will implement event dispatch and workflow orchestration per `ISP-0005` (Domain Event Pattern) and `ISP-0006` (Transaction Pattern), as ordered by the Future Milestones roadmap in `MILESTONE-001.8-ORGANIZATION-PLATFORM.md` and `MILESTONE-001.7-ORGANIZATION-INFRASTRUCTURE.md`.
 
-Scope document does not yet exist. Create the Milestone 1.9 scope document following the approved authority chain:
+Scope document does not yet exist. Create the Milestone 2.0 scope document following the approved authority chain:
 
 RFC
 ↓

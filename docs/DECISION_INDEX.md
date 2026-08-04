@@ -1,8 +1,8 @@
 # ForgeOS Decision Index
 
-**Version:** 1.5.0
+**Version:** 1.6.0
 
-**Last Updated:** 2026-08-02
+**Last Updated:** 2026-08-04
 
 ---
 
@@ -24,6 +24,7 @@ Every permanent architectural decision shall have exactly one authoritative owne
 | Implementation Milestone 1.6  | ✅ Complete |
 | Implementation Milestone 1.7  | ✅ Complete |
 | Implementation Milestone 1.8  | ✅ Complete |
+| Implementation Milestone 1.9  | ✅ Complete |
 | Create Organization Slice     | ✅ Complete |
 
 ---
@@ -67,6 +68,7 @@ Every permanent architectural decision shall have exactly one authoritative owne
 | MILESTONE-001.6 — Create Organization Application Layer | ✅ Complete     |
 | MILESTONE-001.7 — Organization Infrastructure Layer | ✅ Complete     |
 | MILESTONE-001.8 — Organization Platform Layer | ✅ Complete     |
+| MILESTONE-001.9 — Organization Presentation Layer | ✅ Complete     |
 
 ---
 

@@ -1,6 +1,6 @@
 # ForgeOS Project Status
 
-**Last Updated:** 2026-08-02
+**Last Updated:** 2026-08-04
 
 ---
 
@@ -12,13 +12,13 @@ Implementation Phase
 
 # Current Milestone
 
-**Implementation Milestone 001.8 — Organization Platform Layer** is complete.
+**Implementation Milestone 001.9 — Organization Presentation Layer** is complete.
 
-The Organization Platform Layer was implemented inside the `forgeos-desktop-platform` crate: the `createOrganization` Tauri IPC command, IPC request/response/error DTOs with Serde serialization, the dependency composition root wiring `SqliteOrganizationRepository` and the `CreateOrganization` application service, and error translation from `CreateOrganizationError` to stable IPC error codes — as defined by `MILESTONE-001.8-ORGANIZATION-PLATFORM.md` and committed at `ae9c6004`.
+The Organization Presentation Layer was implemented inside the `forgeos-organization-presentation` crate: the framework-neutral Create Organization UI composition, the `CreateOrganizationViewModel` with form input and submission status state, the `createOrganization` Tauri command IPC integration with request construction and response/error DTO handling, the presentation composition root, and stable presentation-layer error types — as defined by `MILESTONE-001.9-ORGANIZATION-PRESENTATION.md` and committed at `0f7e869b`.
 
-`cargo check --workspace` passes. `cargo test --workspace` passes with 66 tests passing.
+`cargo check --workspace` passes. `cargo test --workspace` passes with 105 tests passing.
 
-The repository is ready for **Milestone 1.9 — Organization Presentation Layer (frontend integration)**.
+The repository is ready for **Milestone 2.0 — Event Dispatch and Workflow Orchestration**.
 
 ---
 
@@ -43,6 +43,7 @@ The repository is ready for **Milestone 1.9 — Organization Presentation Layer 
 * Implementation Milestone 001.6 — Create Organization Application Layer
 * Implementation Milestone 001.7 — Organization Infrastructure Layer
 * Implementation Milestone 001.8 — Organization Platform Layer
+* Implementation Milestone 001.9 — Organization Presentation Layer
 
 ---
 
@@ -78,11 +79,11 @@ The repository now includes:
 
 # Next Milestone
 
-**Milestone 1.9 — Organization Presentation Layer (frontend integration)** is the next implementation milestone.
+**Milestone 2.0 — Event Dispatch and Workflow Orchestration** is the next implementation milestone.
 
-The Create Organization vertical slice is complete through the platform layer (Milestone 1.8). The next milestone will implement the Presentation Layer for frontend integration and UI components, exposing the `createOrganization` Tauri command through a desktop frontend.
+The Create Organization vertical slice is complete through the presentation layer (Milestone 1.9). The next milestone will implement event dispatch and workflow orchestration per `ISP-0005` (Domain Event Pattern) and `ISP-0006` (Transaction Pattern), as ordered by the Future Milestones roadmap in `MILESTONE-001.8-ORGANIZATION-PLATFORM.md`.
 
-`cargo check --workspace` passes. `cargo test --workspace` passes with 66 tests passing.
+`cargo check --workspace` passes. `cargo test --workspace` passes with 105 tests passing.
 
 Additional RFC expansion beyond the current approved RFC set is deferred until implementation experience requires new architectural decisions.
 
@@ -92,4 +93,4 @@ Additional RFC expansion beyond the current approved RFC set is deferred until i
 
 The approved architecture is ready to guide implementation. Implementation work must follow the established RFC, TDS, TDR, Architecture Package, and ISP authority order without introducing undocumented technology or architectural decisions.
 
-Cargo is installed and `cargo check --workspace` passes. `cargo test --workspace` passes with 66 tests passing.
+Cargo is installed and `cargo check --workspace` passes. `cargo test --workspace` passes with 105 tests passing.
