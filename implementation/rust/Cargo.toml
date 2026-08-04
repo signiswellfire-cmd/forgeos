@@ -5,4 +5,5 @@ members = [
     "applications/create-organization",
     "infrastructure/organization",
     "platform/desktop",
+    "presentation",
 ]

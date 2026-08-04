@@ -1,0 +1,10 @@
+[package]
+name = "forgeos-organization-presentation"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+forgeos-desktop-platform = { path = "../platform/desktop" }
+
+[dev-dependencies]
+serde_json = "1"
