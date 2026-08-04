@@ -30,6 +30,7 @@ Completed milestones:
 * Implementation Milestone 001.7 — Organization Infrastructure Layer
 * Implementation Milestone 001.8 — Organization Platform Layer
 * Implementation Milestone 001.9 — Organization Presentation Layer
+* Implementation Milestone 002.0 — Event Dispatch and Workflow Orchestration
 
 The approved implementation baseline includes RFC-0001 through RFC-0045, TDS-0001 through TDS-0004, TDR-0001 through TDR-0006, the Architecture Package, ISP-0001 through ISP-0010, and the approved Milestone 1 domain and technology decisions (MILESTONE-001-DOMAIN-DECISIONS, TDR-0006 OrganizationId Generation, and the OrganizationType Decision).
 
@@ -37,13 +38,13 @@ The approved implementation baseline includes RFC-0001 through RFC-0045, TDS-000
 
 # Current Direction
 
-**Implementation Milestone 001.9 — Organization Presentation Layer** is complete.
+**Implementation Milestone 002.0 — Event Dispatch and Workflow Orchestration** is complete.
 
-The Organization Presentation Layer was implemented inside the `forgeos-organization-presentation` crate: the framework-neutral Create Organization UI composition, the `CreateOrganizationViewModel` with form input and submission status state, the `createOrganization` Tauri command IPC integration with request construction and response/error DTO handling, the presentation composition root, and stable presentation-layer error types — as defined by `MILESTONE-001.9-ORGANIZATION-PRESENTATION.md` and committed at `0f7e869b`.
+Milestone 2.0 implemented event dispatch and workflow orchestration for the Create Organization vertical slice: the `EventPublisher` trait in the Organization Domain, the `InMemoryEventPublisher` implementation in Infrastructure, event collection and post-commit publication orchestration in the Create Organization Application Service, and dependency wiring through the Platform composition root — as defined by `MILESTONE-002.0-EVENT-DISPATCH-WORKFLOW-ORCHESTRATION.md` and committed at `03ce9ba0e065a3efaa805be9f3b7c04cf5fad311`.
 
-`cargo check --workspace` passes. `cargo test --workspace` passes with 105 tests passing.
+`cargo check --workspace` passes. `cargo test --workspace` passes with 113 tests passing (1 pre-existing test failure unrelated to this milestone).
 
-The Create Organization vertical slice is complete through the presentation layer. The repository is ready for Milestone 2.0 — Event Dispatch and Workflow Orchestration.
+The Create Organization vertical slice now demonstrates the canonical ForgeOS event publication and workflow orchestration pattern.
 
 Additional RFC expansion beyond the current approved RFC set is deferred until implementation experience requires new architectural decisions.
 
