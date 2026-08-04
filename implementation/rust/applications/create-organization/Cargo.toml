@@ -7,4 +7,5 @@ edition = "2024"
 forgeos-organization-domain = { path = "../../domains/organization-domain" }
 
 [dev-dependencies]
+forgeos-organization-infrastructure = { path = "../../infrastructure/organization" }
 uuid = { version = "1", features = ["v4"], default-features = false }

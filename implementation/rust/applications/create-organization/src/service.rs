@@ -3,9 +3,20 @@
 //! Application Services coordinate use case execution without implementing
 //! business rules. They orchestrate domain operations, manage transaction
 //! boundaries, and coordinate with infrastructure concerns.
+//!
+//! This service demonstrates the canonical ForgeOS workflow orchestration
+//! pattern (ISP-0001; TDS-0004):
+//! 1. Validate command input
+//! 2. Create the Organization aggregate
+//! 3. Persist the aggregate (transaction begin)
+//! 4. Collect domain events via `take_events()`
+//! 5. Commit transaction
+//! 6. Publish events after successful commit (ISP-0005; ISP-0006)
+//! 7. Return the created Organization's identity
 
 use crate::command::CreateOrganizationCommand;
 use crate::errors::{CreateOrganizationError, OrganizationField};
+use forgeos_organization_domain::EventPublisher;
 use forgeos_organization_domain::OrganizationRepository;
 use forgeos_organization_domain::{
     Organization, OrganizationIdGenerator, OrganizationName, OrganizationType,
@@ -17,10 +28,14 @@ use forgeos_organization_domain::{
 /// 1. Validating the command input
 /// 2. Creating the Organization aggregate through the domain
 /// 3. Persisting the aggregate through the repository
-/// 4. Returning the created Organization's identity
+/// 4. Collecting domain events via `take_events()`
+/// 5. Committing the transaction
+/// 6. Publishing events after successful commit (ISP-0005; ISP-0006)
+/// 7. Returning the created Organization's identity
 ///
 /// Business rules remain in the Domain Layer. This service coordinates
-/// only.
+/// only. Event publication occurs only after successful transaction commit,
+/// ensuring that no events are published for rolled-back operations.
 pub struct CreateOrganization<'a, R: OrganizationRepository> {
     repository: &'a R,
 }
@@ -31,12 +46,13 @@ impl<'a, R: OrganizationRepository> CreateOrganization<'a, R> {
         Self { repository }
     }
 
-    /// Executes the Create Organization use case.
+    /// Executes the Create Organization use case with event orchestration.
     ///
     /// # Arguments
     ///
     /// * `command` - The validated command containing organization name and type
     /// * `generator` - The identity generator for creating the Organization ID
+    /// * `event_publisher` - The event publisher for dispatching domain events after commit
     ///
     /// # Returns
     ///
@@ -52,10 +68,18 @@ impl<'a, R: OrganizationRepository> CreateOrganization<'a, R> {
     ///
     /// Returns `CreateOrganizationError::Unexpected` for infrastructure or
     /// other unexpected failures.
+    ///
+    /// # Event Publication
+    ///
+    /// Domain events are published only after successful transaction commit
+    /// (ISP-0005; ISP-0006). If the repository operation fails, no events
+    /// are published. Event publication failures do not rollback committed
+    /// business state.
     pub fn execute(
         &self,
         command: CreateOrganizationCommand,
         generator: &dyn OrganizationIdGenerator,
+        event_publisher: &mut dyn EventPublisher,
     ) -> Result<forgeos_organization_domain::OrganizationId, CreateOrganizationError> {
         // Step 1: Validate command input through domain value objects
         let name = OrganizationName::new(command.name).map_err(|_| {
@@ -67,15 +91,27 @@ impl<'a, R: OrganizationRepository> CreateOrganization<'a, R> {
         })?;
 
         // Step 2: Create the Organization aggregate through the domain
-        let organization = Organization::create(name, organization_type, generator);
+        let mut organization = Organization::create(name, organization_type, generator);
 
         // Step 3: Persist the aggregate through the repository
         // The repository enforces the singleton constraint (OrganizationAlreadyExists)
+        // This represents the transaction boundary (ISP-0006)
         self.repository
             .create(&organization)
             .map_err(CreateOrganizationError::from)?;
 
-        // Step 4: Return the created Organization's identity
+        // Step 4: Collect domain events after successful persistence (ISP-0005)
+        let events = organization.take_events();
+
+        // Step 5: Publish events only after successful commit (ISP-0005; ISP-0006)
+        // Event publication failures do not rollback committed business state
+        if let Err(e) = event_publisher.publish_all(&events) {
+            // Log the error but do not rollback the committed business state
+            // In a production system, this would use a proper logging framework
+            eprintln!("Warning: Failed to publish domain events: {}", e);
+        }
+
+        // Step 6: Return the created Organization's identity
         Ok(organization.organization_id())
     }
 }
@@ -144,8 +180,9 @@ mod tests {
         let repository = MockOrganizationRepository::default();
         let service = CreateOrganization::new(&repository);
         let command = CreateOrganizationCommand::new("ForgeOS", "foundation");
+        let mut event_publisher = forgeos_organization_infrastructure::InMemoryEventPublisher::new();
 
-        let result = service.execute(command, &fixed_generator());
+        let result = service.execute(command, &fixed_generator(), &mut event_publisher);
 
         assert!(result.is_ok());
         let org_id = result.unwrap();
@@ -157,8 +194,9 @@ mod tests {
         let repository = MockOrganizationRepository::default();
         let service = CreateOrganization::new(&repository);
         let command = CreateOrganizationCommand::new("", "foundation");
+        let mut event_publisher = forgeos_organization_infrastructure::InMemoryEventPublisher::new();
 
-        let result = service.execute(command, &fixed_generator());
+        let result = service.execute(command, &fixed_generator(), &mut event_publisher);
 
         assert!(result.is_err());
         assert_eq!(
@@ -172,8 +210,9 @@ mod tests {
         let repository = MockOrganizationRepository::default();
         let service = CreateOrganization::new(&repository);
         let command = CreateOrganizationCommand::new("   ", "foundation");
+        let mut event_publisher = forgeos_organization_infrastructure::InMemoryEventPublisher::new();
 
-        let result = service.execute(command, &fixed_generator());
+        let result = service.execute(command, &fixed_generator(), &mut event_publisher);
 
         assert!(result.is_err());
         assert_eq!(
@@ -187,8 +226,9 @@ mod tests {
         let repository = MockOrganizationRepository::default();
         let service = CreateOrganization::new(&repository);
         let command = CreateOrganizationCommand::new("ForgeOS", "");
+        let mut event_publisher = forgeos_organization_infrastructure::InMemoryEventPublisher::new();
 
-        let result = service.execute(command, &fixed_generator());
+        let result = service.execute(command, &fixed_generator(), &mut event_publisher);
 
         assert!(result.is_err());
         assert_eq!(
@@ -202,8 +242,9 @@ mod tests {
         let repository = MockOrganizationRepository::default();
         let service = CreateOrganization::new(&repository);
         let command = CreateOrganizationCommand::new("ForgeOS", "  ");
+        let mut event_publisher = forgeos_organization_infrastructure::InMemoryEventPublisher::new();
 
-        let result = service.execute(command, &fixed_generator());
+        let result = service.execute(command, &fixed_generator(), &mut event_publisher);
 
         assert!(result.is_err());
         assert_eq!(
@@ -218,8 +259,9 @@ mod tests {
         repository.create_should_fail = true;
         let service = CreateOrganization::new(&repository);
         let command = CreateOrganizationCommand::new("ForgeOS", "foundation");
+        let mut event_publisher = forgeos_organization_infrastructure::InMemoryEventPublisher::new();
 
-        let result = service.execute(command, &fixed_generator());
+        let result = service.execute(command, &fixed_generator(), &mut event_publisher);
 
         assert!(result.is_err());
         match result.unwrap_err() {
@@ -235,11 +277,41 @@ mod tests {
         let repository = MockOrganizationRepository::default();
         let service = CreateOrganization::new(&repository);
         let command = CreateOrganizationCommand::new("ForgeOS", "foundation");
+        let mut event_publisher = forgeos_organization_infrastructure::InMemoryEventPublisher::new();
 
-        let result = service.execute(command, &fixed_generator());
+        let result = service.execute(command, &fixed_generator(), &mut event_publisher);
 
         assert!(result.is_ok());
         let org_id = result.unwrap();
         assert_eq!(org_id.as_str(), "550e8400-e29b-41d4-a716-446655440000");
+    }
+
+    #[test]
+    fn execute_publishes_event_after_successful_commit() {
+        let repository = MockOrganizationRepository::default();
+        let service = CreateOrganization::new(&repository);
+        let command = CreateOrganizationCommand::new("ForgeOS", "foundation");
+        let mut event_publisher = forgeos_organization_infrastructure::InMemoryEventPublisher::new();
+
+        let result = service.execute(command, &fixed_generator(), &mut event_publisher);
+
+        assert!(result.is_ok());
+        let events = event_publisher.drain_events();
+        assert_eq!(events.len(), 1);
+        assert!(matches!(events[0], forgeos_organization_domain::OrganizationDomainEvent::OrganizationCreated(_)));
+    }
+
+    #[test]
+    fn execute_does_not_publish_events_when_repository_fails() {
+        let mut repository = MockOrganizationRepository::default();
+        repository.create_should_fail = true;
+        let service = CreateOrganization::new(&repository);
+        let command = CreateOrganizationCommand::new("ForgeOS", "foundation");
+        let mut event_publisher = forgeos_organization_infrastructure::InMemoryEventPublisher::new();
+
+        let result = service.execute(command, &fixed_generator(), &mut event_publisher);
+
+        assert!(result.is_err());
+        assert!(event_publisher.is_empty());
     }
 }

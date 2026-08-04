@@ -15,13 +15,13 @@ mod errors;
 mod id_generation;
 mod org_domain_event;
 mod organization;
-mod organization_created;
+pub mod organization_created;
 mod organization_repository;
 mod value_objects;
 
 pub use errors::{OrganizationError, OrganizationField};
 pub use id_generation::{DefaultOrganizationIdGenerator, OrganizationIdGenerator};
-pub use org_domain_event::OrganizationDomainEvent;
+pub use org_domain_event::{EventPublisher, OrganizationDomainEvent};
 pub use organization::Organization;
 pub use organization_created::OrganizationCreated;
 pub use organization_repository::OrganizationRepository;

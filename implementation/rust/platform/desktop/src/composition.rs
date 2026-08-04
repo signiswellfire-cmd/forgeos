@@ -1,9 +1,9 @@
 //! Dependency composition root for the Organization Platform Layer (ISP-0007).
 //!
 //! The composition root wires the Create Organization vertical slice by
-//! constructing the Infrastructure repository, running database migrations,
-//! constructing the Domain-owned ID generator, and registering composed
-//! dependencies with the Tauri runtime for command access.
+//! constructing the Infrastructure repository, event publisher, running
+//! database migrations, constructing the Domain-owned ID generator, and
+//! registering composed dependencies with the Tauri runtime for command access.
 //!
 //! This is the Tauri-native realization of ISP-0007 constructor injection:
 //! dependencies are explicitly constructed, declared, and registered with
@@ -12,21 +12,27 @@
 
 use forgeos_organization_domain::DefaultOrganizationIdGenerator;
 use forgeos_organization_infrastructure::errors::InfrastructureError;
-use forgeos_organization_infrastructure::SqliteOrganizationRepository;
+use forgeos_organization_infrastructure::{InMemoryEventPublisher, SqliteOrganizationRepository};
+use std::sync::{Arc, Mutex};
 
 /// Composed dependencies for the Create Organization vertical slice (ISP-0007).
 ///
-/// Holds the Infrastructure repository and Domain ID generator constructed
-/// by the composition root. These dependencies are registered with the Tauri
-/// runtime so that command functions can access them through `tauri::State`.
+/// Holds the Infrastructure repository, event publisher, and Domain ID generator
+/// constructed by the composition root. These dependencies are registered with
+/// the Tauri runtime so that command functions can access them through
+/// `tauri::State`.
 ///
 /// The `CreateOrganization` application service is constructed per-request
 /// from the stored repository reference, as Tauri's state management requires
 /// `'static` lifetimes and the service holds a borrowed reference. This is
 /// the Tauri-native realization of ISP-0007 constructor injection, not a
 /// separate state-management architecture.
+///
+/// The event publisher is wrapped in an `Arc<Mutex<>>` to allow shared mutable
+/// access from Tauri commands, which require `'static` lifetimes (ISP-0007).
 pub struct CompositionRoot {
     repository: SqliteOrganizationRepository,
+    event_publisher: Arc<Mutex<InMemoryEventPublisher>>,
     generator: DefaultOrganizationIdGenerator,
 }
 
@@ -37,7 +43,8 @@ impl CompositionRoot {
     ///
     /// 1. Constructs the `SqliteOrganizationRepository` (Infrastructure)
     /// 2. Runs database migrations
-    /// 3. Constructs the `DefaultOrganizationIdGenerator` (Domain)
+    /// 3. Constructs the `InMemoryEventPublisher` wrapped in `Mutex` (Infrastructure)
+    /// 4. Constructs the `DefaultOrganizationIdGenerator` (Domain)
     ///
     /// # Errors
     ///
@@ -46,9 +53,11 @@ impl CompositionRoot {
     pub async fn new(database_url: &str) -> Result<Self, InfrastructureError> {
         let repository = SqliteOrganizationRepository::new(database_url).await?;
         repository.run_migrations().await?;
+        let event_publisher = Arc::new(Mutex::new(InMemoryEventPublisher::new()));
         let generator = DefaultOrganizationIdGenerator;
         Ok(Self {
             repository,
+            event_publisher,
             generator,
         })
     }
@@ -56,6 +65,11 @@ impl CompositionRoot {
     /// Returns a reference to the composed repository.
     pub fn repository(&self) -> &SqliteOrganizationRepository {
         &self.repository
+    }
+
+    /// Returns a reference to the composed event publisher.
+    pub fn event_publisher(&self) -> &Arc<Mutex<InMemoryEventPublisher>> {
+        &self.event_publisher
     }
 
     /// Returns a reference to the composed ID generator.
@@ -80,6 +94,7 @@ impl CompositionRoot {
     ) -> tauri::Builder<R> {
         builder
             .manage(self.repository)
+            .manage(self.event_publisher)
             .manage(self.generator)
             .invoke_handler(tauri::generate_handler![
                 crate::commands::createOrganization

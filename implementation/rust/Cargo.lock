@@ -793,6 +793,7 @@ name = "forgeos-create-organization-application"
 version = "0.1.0"
 dependencies = [
  "forgeos-organization-domain",
+ "forgeos-organization-infrastructure",
  "uuid",
 ]
 
