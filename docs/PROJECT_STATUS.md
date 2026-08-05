@@ -1,6 +1,6 @@
 # ForgeOS Project Status
 
-**Last Updated:** 2026-08-04
+**Last Updated:** 2026-08-05
 
 ---
 
@@ -12,13 +12,13 @@ Implementation Phase
 
 # Current Milestone
 
-**Implementation Milestone 002.0 — Event Dispatch and Workflow Orchestration** is complete.
+**Implementation Milestone 002.1 — Transaction Coordination Refinement** is complete.
 
-Milestone 2.0 implemented event dispatch and workflow orchestration for the Create Organization vertical slice: the `EventPublisher` trait in the Organization Domain, the `InMemoryEventPublisher` implementation in Infrastructure, event collection and post-commit publication orchestration in the Create Organization Application Service, and dependency wiring through the Platform composition root — as defined by `MILESTONE-002.0-EVENT-DISPATCH-WORKFLOW-ORCHESTRATION.md` and committed at `03ce9ba0e065a3efaa805be9f3b7c04cf5fad311`.
+Milestone 2.1 formalized transaction coordination abstractions for the Create Organization vertical slice: the `Transaction` trait in the Application Layer, the `SqlxTransaction` implementation in Infrastructure, explicit transaction lifecycle coordination (begin, commit, rollback) in the `CreateOrganization` Application Service, and dependency wiring through the Platform composition root — as defined by `MILESTONE-002.1-TRANSACTION-COORDINATION-REFINEMENT.md` and committed at `0696c53` (implementation) and `cb498bd` (documentation).
 
-`cargo check --workspace` passes. `cargo test --workspace` passes with 113 tests passing (1 pre-existing test failure unrelated to this milestone).
+`cargo check --workspace` passes with 2 non-blocking warnings (unused `mut` qualifiers in the infrastructure transaction implementation). `cargo test --workspace -- --test-threads=1` passes with 132 tests passing and 0 failures.
 
-The repository has completed **Milestone 2.0 — Event Dispatch and Workflow Orchestration**.
+The repository has completed **Milestone 2.1 — Transaction Coordination Refinement**.
 
 ---
 
@@ -45,6 +45,7 @@ The repository has completed **Milestone 2.0 — Event Dispatch and Workflow Orc
 * Implementation Milestone 001.8 — Organization Platform Layer
 * Implementation Milestone 001.9 — Organization Presentation Layer
 * Implementation Milestone 002.0 — Event Dispatch and Workflow Orchestration
+* Implementation Milestone 002.1 — Transaction Coordination Refinement
 
 ---
 
@@ -80,9 +81,9 @@ The repository now includes:
 
 # Next Milestone
 
-The Create Organization vertical slice now demonstrates the canonical ForgeOS event publication and workflow orchestration pattern. The repository is ready for additional domain events (`OrganizationUpdated`, `OrganizationArchived`, etc.), cross-context event consumption, and additional bounded contexts per the Future Milestones roadmap.
+The Create Organization vertical slice now demonstrates the canonical ForgeOS transaction coordination pattern with explicit transaction lifecycle management (begin, commit, rollback), event publication after successful commit, and a reusable `Transaction` trait owned by the Application Layer. The repository is ready for additional domain events (`OrganizationUpdated`, `OrganizationArchived`, etc.), cross-context event consumption, additional bounded contexts adopting the transaction pattern, and additional Application Services per the Future Milestones roadmap.
 
-`cargo check --workspace` passes. `cargo test --workspace` passes with 113 tests passing (1 pre-existing test failure unrelated to this milestone).
+`cargo check --workspace` passes with 2 non-blocking warnings. `cargo test --workspace -- --test-threads=1` passes with 132 tests passing and 0 failures.
 
 Additional RFC expansion beyond the current approved RFC set is deferred until implementation experience requires new architectural decisions.
 
@@ -92,4 +93,4 @@ Additional RFC expansion beyond the current approved RFC set is deferred until i
 
 The approved architecture is ready to guide implementation. Implementation work must follow the established RFC, TDS, TDR, Architecture Package, and ISP authority order without introducing undocumented technology or architectural decisions.
 
-Cargo is installed and `cargo check --workspace` passes. `cargo test --workspace` passes with 105 tests passing.
+Cargo is installed and `cargo check --workspace` passes. `cargo test --workspace -- --test-threads=1` passes with 132 tests passing and 0 failures.
