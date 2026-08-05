@@ -793,7 +793,7 @@ name = "forgeos-create-organization-application"
 version = "0.1.0"
 dependencies = [
  "forgeos-organization-domain",
- "forgeos-organization-infrastructure",
+ "thiserror 1.0.69",
  "uuid",
 ]
 
@@ -823,6 +823,7 @@ name = "forgeos-organization-infrastructure"
 version = "0.1.0"
 dependencies = [
  "async-trait",
+ "forgeos-create-organization-application",
  "forgeos-organization-domain",
  "sqlx",
  "thiserror 2.0.19",

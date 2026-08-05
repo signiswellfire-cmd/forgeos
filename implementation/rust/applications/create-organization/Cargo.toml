@@ -5,7 +5,7 @@ edition = "2024"
 
 [dependencies]
 forgeos-organization-domain = { path = "../../domains/organization-domain" }
+thiserror = { version = "1", default-features = false }
 
 [dev-dependencies]
-forgeos-organization-infrastructure = { path = "../../infrastructure/organization" }
 uuid = { version = "1", features = ["v4"], default-features = false }

@@ -5,6 +5,7 @@ edition = "2024"
 
 [dependencies]
 forgeos-organization-domain = { path = "../../domains/organization-domain" }
+forgeos-create-organization-application = { path = "../../applications/create-organization" }
 sqlx = { version = "0.8", features = ["runtime-tokio", "sqlite", "uuid", "chrono"] }
 tokio = { version = "1", features = ["full"] }
 thiserror = "2"

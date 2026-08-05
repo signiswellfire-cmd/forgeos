@@ -9,7 +9,7 @@ use forgeos_create_organization_application::{CreateOrganization, CreateOrganiza
 use forgeos_organization_domain::{
     DefaultOrganizationIdGenerator, OrganizationId, OrganizationIdGenerator,
 };
-use forgeos_organization_infrastructure::{InMemoryEventPublisher, SqliteOrganizationRepository};
+use forgeos_organization_infrastructure::{InMemoryEventPublisher, SqliteOrganizationRepository, SqlxTransaction};
 use std::sync::{Arc, Mutex};
 
 use crate::dtos::{CreateOrganizationRequest, CreateOrganizationResponse};
@@ -23,7 +23,7 @@ use crate::errors::CreateOrganizationErrorDto;
 /// 2. Maps the request DTO to `CreateOrganizationCommand`
 /// 3. Retrieves composed dependencies from Tauri managed state (ISP-0007)
 /// 4. Constructs the `CreateOrganization` application service from the repository
-/// 5. Invokes `CreateOrganization::execute(command, generator, event_publisher)`
+/// 5. Invokes `CreateOrganization::execute(command, generator, transaction, event_publisher)`
 /// 6. Maps the result to a response DTO or error DTO
 ///
 /// No domain entities cross the IPC boundary. The command function is thin:
@@ -34,6 +34,7 @@ pub fn createOrganization(
     request: CreateOrganizationRequest,
     repository: tauri::State<'_, SqliteOrganizationRepository>,
     generator: tauri::State<'_, DefaultOrganizationIdGenerator>,
+    transaction: tauri::State<'_, Arc<Mutex<SqlxTransaction>>>,
     event_publisher: tauri::State<'_, Arc<Mutex<InMemoryEventPublisher>>>,
 ) -> Result<CreateOrganizationResponse, CreateOrganizationErrorDto> {
     // Step 1: Structural boundary validation (ARCH-0001 TB-2, TDR-0004).
@@ -49,10 +50,11 @@ pub fn createOrganization(
     // because Tauri's state management requires `'static` lifetimes.
     let service = CreateOrganization::new(&*repository);
 
-    // Step 4: Invoke application service with event orchestration (TDR-0004, ISP-0001).
+    // Step 4: Invoke application service with transaction coordination (TDR-0004, ISP-0001, ISP-0006).
     let generator_ref: &dyn OrganizationIdGenerator = &*generator;
+    let mut transaction_lock = transaction.inner().lock().unwrap();
     let mut event_publisher_lock = event_publisher.inner().lock().unwrap();
-    let result = service.execute(command, generator_ref, &mut *event_publisher_lock);
+    let result = service.execute(command, generator_ref, &mut *transaction_lock, &mut *event_publisher_lock);
 
     // Step 5: Map result to response DTO or error DTO (TDR-0004, ISP-0008).
     result

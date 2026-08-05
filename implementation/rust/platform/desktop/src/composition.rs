@@ -12,15 +12,15 @@
 
 use forgeos_organization_domain::DefaultOrganizationIdGenerator;
 use forgeos_organization_infrastructure::errors::InfrastructureError;
-use forgeos_organization_infrastructure::{InMemoryEventPublisher, SqliteOrganizationRepository};
+use forgeos_organization_infrastructure::{InMemoryEventPublisher, SqliteOrganizationRepository, SqlxTransaction};
 use std::sync::{Arc, Mutex};
 
 /// Composed dependencies for the Create Organization vertical slice (ISP-0007).
 ///
-/// Holds the Infrastructure repository, event publisher, and Domain ID generator
-/// constructed by the composition root. These dependencies are registered with
-/// the Tauri runtime so that command functions can access them through
-/// `tauri::State`.
+/// Holds the Infrastructure repository, transaction coordinator, event publisher,
+/// and Domain ID generator constructed by the composition root. These dependencies
+/// are registered with the Tauri runtime so that command functions can access them
+/// through `tauri::State`.
 ///
 /// The `CreateOrganization` application service is constructed per-request
 /// from the stored repository reference, as Tauri's state management requires
@@ -28,10 +28,12 @@ use std::sync::{Arc, Mutex};
 /// the Tauri-native realization of ISP-0007 constructor injection, not a
 /// separate state-management architecture.
 ///
-/// The event publisher is wrapped in an `Arc<Mutex<>>` to allow shared mutable
-/// access from Tauri commands, which require `'static` lifetimes (ISP-0007).
+/// The event publisher and transaction coordinator are wrapped in `Arc<Mutex<>>`
+/// to allow shared mutable access from Tauri commands, which require `'static`
+/// lifetimes (ISP-0007).
 pub struct CompositionRoot {
     repository: SqliteOrganizationRepository,
+    transaction: Arc<Mutex<SqlxTransaction>>,
     event_publisher: Arc<Mutex<InMemoryEventPublisher>>,
     generator: DefaultOrganizationIdGenerator,
 }
@@ -43,8 +45,9 @@ impl CompositionRoot {
     ///
     /// 1. Constructs the `SqliteOrganizationRepository` (Infrastructure)
     /// 2. Runs database migrations
-    /// 3. Constructs the `InMemoryEventPublisher` wrapped in `Mutex` (Infrastructure)
-    /// 4. Constructs the `DefaultOrganizationIdGenerator` (Domain)
+    /// 3. Constructs the `SqlxTransaction` wrapped in `Arc<Mutex<>>` (Infrastructure)
+    /// 4. Constructs the `InMemoryEventPublisher` wrapped in `Arc<Mutex<>>` (Infrastructure)
+    /// 5. Constructs the `DefaultOrganizationIdGenerator` (Domain)
     ///
     /// # Errors
     ///
@@ -53,10 +56,13 @@ impl CompositionRoot {
     pub async fn new(database_url: &str) -> Result<Self, InfrastructureError> {
         let repository = SqliteOrganizationRepository::new(database_url).await?;
         repository.run_migrations().await?;
+        let pool = Arc::new(repository.pool().clone());
+        let transaction = Arc::new(Mutex::new(SqlxTransaction::new(pool)));
         let event_publisher = Arc::new(Mutex::new(InMemoryEventPublisher::new()));
         let generator = DefaultOrganizationIdGenerator;
         Ok(Self {
             repository,
+            transaction,
             event_publisher,
             generator,
         })
@@ -65,6 +71,11 @@ impl CompositionRoot {
     /// Returns a reference to the composed repository.
     pub fn repository(&self) -> &SqliteOrganizationRepository {
         &self.repository
+    }
+
+    /// Returns a reference to the composed transaction coordinator.
+    pub fn transaction(&self) -> &Arc<Mutex<SqlxTransaction>> {
+        &self.transaction
     }
 
     /// Returns a reference to the composed event publisher.
@@ -94,6 +105,7 @@ impl CompositionRoot {
     ) -> tauri::Builder<R> {
         builder
             .manage(self.repository)
+            .manage(self.transaction)
             .manage(self.event_publisher)
             .manage(self.generator)
             .invoke_handler(tauri::generate_handler![

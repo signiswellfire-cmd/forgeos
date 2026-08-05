@@ -54,6 +54,14 @@ impl SqliteOrganizationRepository {
         }
     }
 
+    /// Returns a reference to the connection pool.
+    ///
+    /// This method is used by the composition root to create transaction
+    /// coordinators that share the same connection pool.
+    pub fn pool(&self) -> &SqlitePool {
+        &self.pool
+    }
+
     /// Runs pending migrations to ensure the database schema is up to date.
     pub async fn run_migrations(&self) -> Result<(), InfrastructureError> {
         let migrations_dir = std::path::Path::new(env!("CARGO_MANIFEST_DIR")).join("migrations");
@@ -81,7 +89,8 @@ impl OrganizationRepository for SqliteOrganizationRepository {
         }
 
         // Insert the new organization
-        rt.block_on(async {
+        // The database trigger enforces singleton constraint and will abort if one already exists
+        let insert_result = rt.block_on(async {
             sqlx::query(
                 r#"
                 INSERT INTO organizations (id, name, organization_type, status, version)
@@ -95,9 +104,17 @@ impl OrganizationRepository for SqliteOrganizationRepository {
             .bind(organization.version().value() as i64)
             .execute(&*self.pool)
             .await
-        }).map_err(InfrastructureError::Database)?;
+        });
 
-        Ok(())
+        // Check if the insert failed due to singleton constraint violation
+        match insert_result {
+            Ok(_) => Ok(()),
+            Err(sqlx::Error::Database(_)) => {
+                // The trigger aborted the transaction due to singleton constraint
+                Err(InfrastructureError::AlreadyExists.into())
+            }
+            Err(e) => Err(InfrastructureError::Database(e).into()),
+        }
     }
 
     fn retrieve(&self, id: OrganizationId) -> Result<Option<Organization>, OrganizationError> {

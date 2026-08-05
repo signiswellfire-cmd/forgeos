@@ -37,7 +37,9 @@
 pub mod errors;
 pub mod event_publisher;
 pub mod repository;
+pub mod transaction;
 
 // Re-export the main types for convenience
 pub use event_publisher::InMemoryEventPublisher;
 pub use repository::SqliteOrganizationRepository;
+pub use transaction::SqlxTransaction;
