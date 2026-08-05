@@ -139,6 +139,7 @@ forgeos/
 ├── docs/
 │   ├── philosophy/
 │   ├── genome/
+│   ├── founder/
 │   ├── rfcs/
 │   ├── tds/
 │   ├── tdr/
