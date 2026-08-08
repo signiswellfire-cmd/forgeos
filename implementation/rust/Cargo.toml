@@ -3,10 +3,13 @@ resolver = "3"
 members = [
     "domains/organization-domain",
     "domains/governance-domain",
+    "domains/workforce-domain",
     "applications/create-organization",
     "applications/create-governance",
+    "applications/manage-workforce",
     "infrastructure/organization",
     "infrastructure/governance",
+    "infrastructure/workforce",
     "platform/desktop",
     "presentation",
 ]

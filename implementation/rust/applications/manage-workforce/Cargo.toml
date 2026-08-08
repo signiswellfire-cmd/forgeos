@@ -1,0 +1,8 @@
+[package]
+name = "forgeos-manage-workforce-application"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+forgeos-workforce-domain = { path = "../../domains/workforce-domain" }
+thiserror = { version = "1", default-features = false }

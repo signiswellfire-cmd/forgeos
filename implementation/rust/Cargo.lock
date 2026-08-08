@@ -839,6 +839,14 @@ dependencies = [
 ]
 
 [[package]]
+name = "forgeos-manage-workforce-application"
+version = "0.1.0"
+dependencies = [
+ "forgeos-workforce-domain",
+ "thiserror 1.0.69",
+]
+
+[[package]]
 name = "forgeos-organization-domain"
 version = "0.1.0"
 dependencies = [
@@ -865,6 +873,23 @@ version = "0.1.0"
 dependencies = [
  "forgeos-desktop-platform",
  "serde_json",
+]
+
+[[package]]
+name = "forgeos-workforce-domain"
+version = "0.1.0"
+dependencies = [
+ "chrono",
+ "getrandom 0.2.17",
+ "thiserror 1.0.69",
+ "uuid",
+]
+
+[[package]]
+name = "forgeos-workforce-infrastructure"
+version = "0.1.0"
+dependencies = [
+ "forgeos-workforce-domain",
 ]
 
 [[package]]
