@@ -1,0 +1,9 @@
+[package]
+name = "forgeos-create-governance"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+forgeos-governance-domain = { path = "../../domains/governance-domain" }
+uuid = { version = "1", features = ["v4"], default-features = false }
+thiserror = { version = "1", default-features = false }

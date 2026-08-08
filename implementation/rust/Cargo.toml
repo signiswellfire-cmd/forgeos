@@ -2,8 +2,11 @@
 resolver = "3"
 members = [
     "domains/organization-domain",
+    "domains/governance-domain",
     "applications/create-organization",
+    "applications/create-governance",
     "infrastructure/organization",
+    "infrastructure/governance",
     "platform/desktop",
     "presentation",
 ]

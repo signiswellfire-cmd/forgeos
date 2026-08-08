@@ -789,6 +789,15 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "77ce24cb58228fbb8aa041425bb1050850ac19177686ea6e0f41a70416f56fdb"
 
 [[package]]
+name = "forgeos-create-governance"
+version = "0.1.0"
+dependencies = [
+ "forgeos-governance-domain",
+ "thiserror 1.0.69",
+ "uuid",
+]
+
+[[package]]
 name = "forgeos-create-organization-application"
 version = "0.1.0"
 dependencies = [
@@ -807,6 +816,25 @@ dependencies = [
  "serde",
  "serde_json",
  "tauri",
+ "uuid",
+]
+
+[[package]]
+name = "forgeos-governance-domain"
+version = "0.1.0"
+dependencies = [
+ "chrono",
+ "getrandom 0.2.17",
+ "thiserror 1.0.69",
+ "uuid",
+]
+
+[[package]]
+name = "forgeos-infrastructure-governance"
+version = "0.1.0"
+dependencies = [
+ "forgeos-governance-domain",
+ "thiserror 1.0.69",
  "uuid",
 ]
 
